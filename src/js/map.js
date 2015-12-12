@@ -1,4 +1,5 @@
 import { Enemy } from 'sprites/enemy';
+import { Coin } from 'sprites/coin';
 
 export class Map extends Phaser.Tilemap {
     constructor(state) {
@@ -28,6 +29,13 @@ export class Map extends Phaser.Tilemap {
                     goal.position.setTo(character.x + goal.width / 2, character.y - goal.height / 2);
                     break;
             }
+        }
+        this.loadCoins();
+    }
+
+    loadCoins() {
+        for(let coin of this.objects.coins) {
+            this.gameState.coins.add(new Coin(this.gameState, coin.x + 16, coin.y - 16));
         }
     }
 }

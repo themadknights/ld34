@@ -27,6 +27,9 @@ export class StartState extends Phaser.State {
         // Create player
         this.player = new Player(this, 0, 0);
 
+        // Create coins
+        this.coins = this.game.add.group();
+
         // Create goal
         this.goal = new Goal(this, 0, 0);
 
@@ -72,6 +75,10 @@ export class StartState extends Phaser.State {
 
         this.physics.arcade.overlap(this.player, this.goal, () => {
             this.levelComplete();
+        });
+
+        this.physics.arcade.overlap(this.player, this.coins, (player, coin) => {
+            this.player.collect(coin);
         });
 
         // // TODO: for debugging purposes
@@ -127,6 +134,10 @@ export class StartState extends Phaser.State {
         for (let i = 0; i < this.player.maxHealth; i += 1) {
             this.healthIcons.children[i].frame = i < this.player.health ? 0 : 1;
         }
+    }
+
+    updateScoreHud () {
+        this.scoreLabel.text = `Score: ${pad(this.score)}`;
     }
 
     toggleDebug () {

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="40" height="20" tilewidth="32" tileheight="32" nextobjectid="10">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="40" height="20" tilewidth="32" tileheight="32" nextobjectid="32">
  <tileset firstgid="1" name="tileset" tilewidth="32" tileheight="32" tilecount="36">
   <image source="../images/tileset.png" width="192" height="192"/>
  </tileset>
@@ -11,6 +11,9 @@
  </tileset>
  <tileset firstgid="42" name="goal" tilewidth="64" tileheight="64" tilecount="1">
   <image source="../images/goal.png" width="64" height="64"/>
+ </tileset>
+ <tileset firstgid="43" name="coin" tilewidth="32" tileheight="32" tilecount="1">
+  <image source="../images/coin.png" width="32" height="32"/>
  </tileset>
  <layer name="foreground" width="40" height="20">
   <data>
@@ -823,5 +826,22 @@
   <object id="5" type="enemy" gid="37" x="64" y="160" width="32" height="32"/>
   <object id="6" type="enemy" gid="37" x="1024" y="288" width="32" height="32"/>
   <object id="9" name="goal" type="goal" gid="42" x="1120" y="544" width="64" height="64"/>
+ </objectgroup>
+ <objectgroup name="coins">
+  <object id="17" gid="43" x="128" y="416" width="32" height="32"/>
+  <object id="18" gid="43" x="160" y="416" width="32" height="32"/>
+  <object id="19" gid="43" x="288" y="320" width="32" height="32"/>
+  <object id="20" gid="43" x="320" y="320" width="32" height="32"/>
+  <object id="21" gid="43" x="352" y="320" width="32" height="32"/>
+  <object id="22" gid="43" x="512" y="416" width="32" height="32"/>
+  <object id="23" gid="43" x="544" y="416" width="32" height="32"/>
+  <object id="24" gid="43" x="576" y="96" width="32" height="32"/>
+  <object id="25" gid="43" x="960" y="64" width="32" height="32"/>
+  <object id="26" gid="43" x="768" y="416" width="32" height="32"/>
+  <object id="27" gid="43" x="800" y="416" width="32" height="32"/>
+  <object id="28" gid="43" x="1024" y="480" width="32" height="32"/>
+  <object id="29" gid="43" x="192" y="96" width="32" height="32"/>
+  <object id="30" gid="43" x="160" y="96" width="32" height="32"/>
+  <object id="31" gid="43" x="128" y="96" width="32" height="32"/>
  </objectgroup>
 </map>
