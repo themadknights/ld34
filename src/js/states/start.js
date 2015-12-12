@@ -30,6 +30,9 @@ export class StartState extends Phaser.State {
         // Create coins
         this.coins = this.game.add.group();
 
+        // Create spikes
+        this.spikes = this.game.add.group();
+
         // Create goal
         this.goal = new Goal(this, 0, 0);
 
@@ -79,6 +82,12 @@ export class StartState extends Phaser.State {
 
         this.physics.arcade.overlap(this.player, this.coins, (player, coin) => {
             this.player.collect(coin);
+        });
+
+        this.physics.arcade.overlap(this.player, this.spikes, (player, spike) => {
+            if (player.body.velocity.y > 0 && player.body.bottom !== spike.body.bottom) {
+                this.gameOver();
+            }
         });
 
         // // TODO: for debugging purposes

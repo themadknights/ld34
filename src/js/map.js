@@ -1,5 +1,6 @@
 import { Enemy } from 'sprites/enemy';
 import { Coin } from 'sprites/coin';
+import { Spike } from 'sprites/spike';
 
 export class Map extends Phaser.Tilemap {
     constructor(state) {
@@ -31,11 +32,18 @@ export class Map extends Phaser.Tilemap {
             }
         }
         this.loadCoins();
+        this.loadSpikes();
     }
 
     loadCoins() {
         for(let coin of this.objects.coins) {
             this.gameState.coins.add(new Coin(this.gameState, coin.x + 16, coin.y - 16));
+        }
+    }
+
+    loadSpikes() {
+        for(let spike of this.objects.spikes) {
+            this.gameState.spikes.add(new Spike(this.gameState, spike.x + 16, spike.y - 16));
         }
     }
 }
