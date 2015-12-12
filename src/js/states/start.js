@@ -1,5 +1,5 @@
+import { Map } from 'sprites/map';
 import { Player } from 'sprites/player';
-import { Enemy } from 'sprites/enemy';
 
 export class StartState extends Phaser.State {
     constructor() {
@@ -15,19 +15,17 @@ export class StartState extends Phaser.State {
         //Creating gravity
         this.physics.arcade.gravity.y = 300;
 
-        // Create world
-        this.map = this.add.tilemap('level1');
-        this.map.addTilesetImage('tileset');
-        this.map.setCollision(2);
-        this.mapLayer = this.map.createLayer('foreground');
-        this.mapLayer.resizeWorld();
+        // Create map
+        this.map = new Map(this);
 
         // Create player
-        this.player = new Player(this, 100, 100);
+        this.player = new Player(this, 0, 0);
 
         // Create enemies
         this.enemies = this.game.add.group();
-        this.enemies.add(new Enemy(this, 500, 100));
+
+        // Load level
+        this.map.loadLevel();
 
         // TODO: for debugging purposes
         this.cursors = this.game.input.keyboard.createCursorKeys();
@@ -61,8 +59,8 @@ export class StartState extends Phaser.State {
     }
 
     update() {
-        this.game.physics.arcade.collide(this.player, this.mapLayer);
-        this.game.physics.arcade.collide(this.enemies, this.mapLayer);
+        this.game.physics.arcade.collide(this.player, this.map.platforms);
+        this.game.physics.arcade.collide(this.enemies, this.map.platforms);
 
         this.physics.arcade.overlap(this.player, this.enemies, function() {
             // TODO:
