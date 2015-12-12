@@ -6,7 +6,10 @@ export class Enemy extends Phaser.Sprite {
         this.game.add.existing(this);
         this.game.physics.arcade.enable(this);
 
-        this.body.velocity.x = 100;
+        this.body.velocity.x = 50;
+
+        this.animations.add("patrol", [0, 1], 4, true);
+        this.play("patrol");
     }
 
     update () {
