@@ -3,7 +3,7 @@ export class Player extends Phaser.Sprite {
         super(state.game, x, y, 'player');
 
         this.gameState = state;
-        
+
         this.anchor.setTo(0.5);
         this.game.add.existing(this);
         this.game.physics.arcade.enable(this);
@@ -14,6 +14,8 @@ export class Player extends Phaser.Sprite {
 
         this.maxHealth = 3;
         this.health = this.maxHealth;
+        this.checkWorldBounds = true;
+        this.outOfBoundsKill = true;
 
         //Cast bar
         this.castBar = this.addChild(this.game.make.sprite(0, -40, 'castbar'));
@@ -55,18 +57,27 @@ export class Player extends Phaser.Sprite {
 
     damage(amount) {
         if(!this.invulnerable) {
-            this.health -= amount;
             this.invulnerable = true;
             let timer = this.game.time.create(this.game, true);
             this.immunityTween = this.game.add.tween(this).to({ alpha: 0 }, 0.1 * Phaser.Timer.SECOND, "Linear", true, 0, -1);
             this.immunityTween.yoyo(true, 0);
+            this.health -= amount;
             timer.add(2*Phaser.Timer.SECOND, function() {
                 this.game.tweens.remove(this.immunityTween);
                 this.invulnerable = false;
                 this.alpha = 1;
+                if (this.health <= 0) {
+                    this.kill();
+                }
             }, this);
             timer.start();
             this.gameState.updateHealthHud();
         }
     }
+
+    kill() {
+        super.kill();
+        this.gameState.gameOver();
+    }
+
 }
