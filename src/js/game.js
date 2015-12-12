@@ -7,7 +7,7 @@ const CANVAS_HEIGHT = 600;
 
 export class Game extends Phaser.Game {
     constructor () {
-        super(CANVAS_WIDTH, CANVAS_HEIGHT, Phaser.CANVAS);
+        super(CANVAS_WIDTH, CANVAS_HEIGHT, Phaser.CANVAS, "", null, false, false);
         this.state.add('preload', new PreloadState());
         this.state.add('load', new LoadState());
         this.state.add('start', new StartState());
