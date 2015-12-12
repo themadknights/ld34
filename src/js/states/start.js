@@ -1,3 +1,5 @@
+import { Player } from 'sprites/player';
+
 export class StartState extends Phaser.State {
     constructor() {
         super();
@@ -11,6 +13,9 @@ export class StartState extends Phaser.State {
     create() {
         //Creating gravity
         this.physics.arcade.gravity.y = 300;
+
+        // Create player
+        this.player = new Player(this, 200, 200);
     }
 
     update() {
