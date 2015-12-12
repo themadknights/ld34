@@ -1,9 +1,7 @@
 export class Player extends Phaser.Sprite {
     constructor(state, x, y) {
         super(state.game, x, y, 'player');
-
         this.gameState = state;
-
         this.anchor.setTo(0.5);
         this.game.add.existing(this);
         this.game.physics.arcade.enable(this);
@@ -39,6 +37,19 @@ export class Player extends Phaser.Sprite {
                 break;
             case "X": //Jump
                 this.body.velocity.y = -200;
+                break;
+            case "ZXXZ": //Fireball
+                console.log(this.gameState.fireballs.length);
+                let fireball = this.gameState.fireballs.getFirstExists(false);
+                if(fireball) {
+                    fireball.reset(this.x + 30, this.y);
+                } else {
+                    fireball = this.gameState.fireballs.create(this.x + 30, this.y, 'fireball');
+                }
+                fireball.anchor.setTo(0.5);
+                this.game.physics.arcade.enable(fireball);
+                fireball.body.allowGravity = false;
+                fireball.body.velocity.x = 500;
                 break;
         }
     }
