@@ -55,7 +55,7 @@ export class StartState extends Phaser.State {
         this.game.physics.arcade.collide(this.fireballs, this.map.platforms, function(fireball) {
             fireball.kill();
         });
-        this.game.physics.arcade.collide(this.fireballs, this.enemies, function(fireball, enemy) {
+        this.game.physics.arcade.overlap(this.fireballs, this.enemies, function(fireball, enemy) {
             fireball.kill();
             enemy.kill();
         });

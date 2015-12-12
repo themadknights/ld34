@@ -16,6 +16,6 @@ export class LoadState extends Phaser.State {
     }
 
     create () {
-        this.game.state.start('start');
+        this.game.state.start('menu');
     }
 }
