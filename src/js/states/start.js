@@ -77,6 +77,10 @@ export class StartState extends Phaser.State {
             this.levelComplete();
         });
 
+        this.physics.arcade.overlap(this.player, this.coins, (player, coin) => {
+            this.player.collect(coin);
+        });
+
         // // TODO: for debugging purposes
         // if (this.cursors.up.isDown) {
         //     this.player.body.velocity.y = -200;
@@ -130,6 +134,10 @@ export class StartState extends Phaser.State {
         for (let i = 0; i < this.player.maxHealth; i += 1) {
             this.healthIcons.children[i].frame = i < this.player.health ? 0 : 1;
         }
+    }
+
+    updateScoreHud () {
+        this.scoreLabel.text = `Score: ${pad(this.score)}`;
     }
 
     toggleDebug () {

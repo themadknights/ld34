@@ -91,4 +91,10 @@ export class Player extends Phaser.Sprite {
         this.gameState.gameOver();
     }
 
+    collect(coin) {
+        this.gameState.score += coin.value;
+        this.gameState.updateScoreHud();
+        coin.kill();
+    }
+
 }
