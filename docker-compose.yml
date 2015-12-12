@@ -1,0 +1,8 @@
+app:
+  build: .
+  command: "npm run-script dev"
+  volumes:
+    - .:/ld34
+  ports:
+    - "8080:8080"
+    - "35729:35729"
