@@ -66,7 +66,14 @@ gulp.task('scripts', function () {
         .pipe($.connect.reload());
 });
 
-gulp.task('build', ['scripts', 'libs', 'templates', 'styles', 'images','json', 'fonts']);
+gulp.task('cname', function () {
+    gulp.src(config.files.cname)
+        .pipe($.plumber())
+        .pipe(gulp.dest(config.folders.dest))
+        .pipe($.connect.reload());
+});
+
+gulp.task('build', ['scripts', 'libs', 'templates', 'styles', 'images','json', 'fonts', 'cname']);
 
 gulp.task('watch', ['build'], function () {
     gulp.watch(config.files.scripts, ['scripts']);

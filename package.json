@@ -4,7 +4,8 @@
   "description": "## Development",
   "main": "gulpfile.js",
   "scripts": {
-    "dev": "gulp clean && gulp dev"
+    "dev": "gulp clean && gulp dev",
+    "deploy": "gulp clean && NODE_ENV=production gulp build && surge public"
   },
   "author": "",
   "license": "ISC",

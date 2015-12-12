@@ -21,7 +21,8 @@ module.exports = {
         styles: `${sourceFolder}/styles/**/*.css`,
         images: `${sourceFolder}/images/**/*.*`,
         json: `${sourceFolder}/json/**/*.*`,
-        fonts: `${sourceFolder}/fonts/**/*.*`
+        fonts: `${sourceFolder}/fonts/**/*.*`,
+        cname: `${configFolder}/CNAME`
     },
     scripts: {
         destFolder: `${destFolder}/js`,
