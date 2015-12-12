@@ -1,4 +1,5 @@
 import { Player } from 'sprites/player';
+import { Enemy } from 'sprites/enemy';
 
 export class StartState extends Phaser.State {
     constructor() {
@@ -24,18 +25,27 @@ export class StartState extends Phaser.State {
         // Create player
         this.player = new Player(this, 100, 100);
 
+        // Create enemies
+        this.enemies = this.game.add.group();
+        this.enemies.add(new Enemy(this, 500, 100));
+
         // TODO: for debugging purposes
         this.cursors = this.game.input.keyboard.createCursorKeys();
     }
 
     update() {
         this.game.physics.arcade.collide(this.player, this.mapLayer);
+        this.game.physics.arcade.collide(this.enemies, this.mapLayer);
+
+        this.physics.arcade.overlap(this.player, this.enemies, function() {
+            // TODO:
+        });
 
         // TODO: for debugging purposes
         if (this.cursors.up.isDown) {
             this.player.body.velocity.y = -200;
         }
-        
+
         if (this.cursors.left.isDown) {
             this.player.body.velocity.x = -200;
         } else if (this.cursors.right.isDown) {
