@@ -1,5 +1,6 @@
 var sourceFolder = 'src',
-    destFolder   = 'public';
+    destFolder   = 'public',
+    configFolder = 'config';
 
 module.exports = {
     folders: {
