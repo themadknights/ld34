@@ -10,6 +10,10 @@ export class StartState extends Phaser.State {
     init() {
         //Starting Physics
         this.physics.startSystem(Phaser.Physics.ARCADE);
+
+        //  Press F1 to toggle the debug display
+        this.debugKey = this.input.keyboard.addKey(Phaser.Keyboard.F1);
+        this.debugKey.onDown.add(this.toggleDebug, this);
     }
 
     create() {
@@ -46,8 +50,11 @@ export class StartState extends Phaser.State {
         this.game.physics.arcade.collide(this.player, this.map.platforms);
         this.game.physics.arcade.collide(this.enemies, this.map.platforms);
 
-        this.physics.arcade.overlap(this.player, this.enemies, function() {
-            // TODO:
+        this.physics.arcade.overlap(this.player, this.enemies, () => {
+            this.player.damage(1);
+            if (this.player.health <= 0) {
+                this.gameOver();
+            }
         });
 
         // // TODO: for debugging purposes
@@ -65,7 +72,10 @@ export class StartState extends Phaser.State {
     }
 
     render() {
-
+        if (this.showDebug) {
+            this.game.debug.body(this.player);
+            this.enemies.forEach((enemy) => this.game.debug.body(enemy));
+        }
     }
 
     createHUD () {
@@ -87,9 +97,17 @@ export class StartState extends Phaser.State {
         this.updateHealthHud();
     }
 
+    gameOver() {
+        this.game.state.start('start', true, false, this.score);
+    }
+
     updateHealthHud () {
         for (let i = 0; i < this.player.maxHealth; i += 1) {
             this.healthIcons.children[i].frame = i < this.player.health ? 0 : 1;
         }
+    }
+
+    toggleDebug () {
+        this.showDebug = (this.showDebug) ? false : true;
     }
 }
