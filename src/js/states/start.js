@@ -1,3 +1,4 @@
+import { pad } from 'utils';
 import { Map } from 'sprites/map';
 import { Player } from 'sprites/player';
 
@@ -37,6 +38,8 @@ export class StartState extends Phaser.State {
         this.zKey.onDown.add(this.player.addKeyToSpell, this.player, 0, 'Z');
         this.xKey.onDown.add(this.player.addKeyToSpell, this.player, 0, 'X');
 
+        // Create hud
+        this.createHUD();
     }
 
     update() {
@@ -63,5 +66,30 @@ export class StartState extends Phaser.State {
 
     render() {
 
+    }
+
+    createHUD () {
+        this.score = 0;
+        this.scoreLabel = this.game.add.bitmapText(this.game.width - 10, 10, 'carrier_command', `Score: ${pad(this.score)}`, 12);
+        this.scoreLabel.anchor.setTo(1, 0);
+        this.scoreLabel.fixedToCamera = true;
+
+        this.healthLabel = this.game.add.bitmapText(10, 10, 'carrier_command', "Health: ", 12);
+        this.healthLabel.fixedToCamera = true;
+
+        this.healthIcons = this.game.add.group();
+        this.healthIcons.fixedToCamera = true;
+        for (let i = 0; i < this.player.maxHealth; i += 1) {
+            let icon = this.game.add.sprite(this.healthLabel.width + 16 + i * 18, 16, 'healthIcons');
+            icon.anchor.setTo(0.5);
+            this.healthIcons.add(icon);
+        }
+        this.updateHealthHud();
+    }
+
+    updateHealthHud () {
+        for (let i = 0; i < this.player.maxHealth; i += 1) {
+            this.healthIcons.children[i].frame = i < this.player.health ? 0 : 1;
+        }
     }
 }

@@ -9,6 +9,9 @@ export class Player extends Phaser.Sprite {
         this.animations.add("idle", [0, 1], 10, true);
         this.play("idle");
 
+        this.maxHealth = 3;
+        this.health = this.maxHealth;
+
         //Cast bar
         this.castBar = this.addChild(this.game.make.sprite(0, -40, 'castbar'));
         this.castBar.anchor.setTo(0.5);
