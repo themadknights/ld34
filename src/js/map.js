@@ -7,7 +7,7 @@ export class Map extends Phaser.Tilemap {
         this.gameState = state;
 
         this.addTilesetImage('tileset');
-        this.setCollision(2);
+        this.setCollisionBetween(2,99);
 
         this.platforms = this.createLayer('foreground');
         this.platforms.resizeWorld();
