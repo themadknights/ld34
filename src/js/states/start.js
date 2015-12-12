@@ -35,28 +35,9 @@ export class StartState extends Phaser.State {
         //Adding keyboard
         this.zKey = this.game.input.keyboard.addKey(Phaser.KeyCode.Z);
         this.xKey = this.game.input.keyboard.addKey(Phaser.KeyCode.X);
-        //Add timer
-        this.spellTimer = this.game.time.create(false);
-        this.spellTimer.start();
-        this.spell = "";
-        this.zKey.onDown.add(function() {
-            this.player.spell += "Z";
-            this.spellTimer.stop();
-            this.spellTimer.add(Phaser.Timer.SECOND, function() {
-                this.player.cast();
-                this.player.spell = "";
-            }, this);
-            this.spellTimer.start();
-        }, this);
-        this.xKey.onDown.add(function() {
-            this.player.spell += "X";
-            this.spellTimer.stop();
-            this.spellTimer.add(Phaser.Timer.SECOND, function() {
-                this.player.cast();
-                this.player.spell = "";
-            }, this);
-            this.spellTimer.start();
-        }, this);
+
+        this.zKey.onDown.add(this.player.addKeyToSpell, this.player, 0, 'Z');
+        this.xKey.onDown.add(this.player.addKeyToSpell, this.player, 0, 'X');
 
     }
 
