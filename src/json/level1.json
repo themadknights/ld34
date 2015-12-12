@@ -20,7 +20,7 @@
                  "gid":38,
                  "height":64,
                  "id":1,
-                 "name":"",
+                 "name":"player",
                  "properties":
                     {
 
@@ -67,22 +67,6 @@
                 {
                  "gid":37,
                  "height":32,
-                 "id":4,
-                 "name":"",
-                 "properties":
-                    {
-
-                    },
-                 "rotation":0,
-                 "type":"enemy",
-                 "visible":true,
-                 "width":32,
-                 "x":1120,
-                 "y":544
-                }, 
-                {
-                 "gid":37,
-                 "height":32,
                  "id":5,
                  "name":"",
                  "properties":
@@ -111,6 +95,22 @@
                  "width":32,
                  "x":1024,
                  "y":288
+                }, 
+                {
+                 "gid":42,
+                 "height":64,
+                 "id":9,
+                 "name":"goal",
+                 "properties":
+                    {
+
+                    },
+                 "rotation":0,
+                 "type":"goal",
+                 "visible":true,
+                 "width":64,
+                 "x":1120,
+                 "y":544
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -119,7 +119,7 @@
          "x":0,
          "y":0
         }],
- "nextobjectid":9,
+ "nextobjectid":10,
  "orientation":"orthogonal",
  "properties":
     {
@@ -173,6 +173,22 @@
             },
          "spacing":0,
          "tilecount":4,
+         "tileheight":64,
+         "tilewidth":64
+        }, 
+        {
+         "firstgid":42,
+         "image":"..\/images\/goal.png",
+         "imageheight":64,
+         "imagewidth":64,
+         "margin":0,
+         "name":"goal",
+         "properties":
+            {
+
+            },
+         "spacing":0,
+         "tilecount":1,
          "tileheight":64,
          "tilewidth":64
         }],

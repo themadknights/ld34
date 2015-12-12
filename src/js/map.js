@@ -23,6 +23,10 @@ export class Map extends Phaser.Tilemap {
                 case "enemy":
                     this.gameState.enemies.add(new Enemy(this.gameState, character.x + 16, character.y - 16));
                     break;
+                case "goal":
+                    let goal = this.gameState.goal;
+                    goal.position.setTo(character.x + goal.width / 2, character.y - goal.height / 2);
+                    break;
             }
         }
     }

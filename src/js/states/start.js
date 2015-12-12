@@ -1,5 +1,6 @@
 import { pad } from 'utils';
-import { Map } from 'sprites/map';
+import { Map } from 'map';
+import { Goal } from 'sprites/goal';
 import { Player } from 'sprites/player';
 
 export class StartState extends Phaser.State {
@@ -26,6 +27,9 @@ export class StartState extends Phaser.State {
         // Create player
         this.player = new Player(this, 0, 0);
 
+        // Create goal
+        this.goal = new Goal(this, 0, 0);
+
         //Fireball group
         this.fireballs = this.game.add.group();
 
@@ -51,7 +55,9 @@ export class StartState extends Phaser.State {
 
     update() {
         this.game.physics.arcade.collide(this.player, this.map.platforms);
+
         this.game.physics.arcade.collide(this.enemies, this.map.platforms);
+
         this.game.physics.arcade.collide(this.fireballs, this.map.platforms, function(fireball) {
             fireball.kill();
         });
@@ -64,23 +70,28 @@ export class StartState extends Phaser.State {
             this.player.damage(1);
         });
 
-        // // TODO: for debugging purposes
-        // if (this.cursors.up.isDown) {
-        //     this.player.body.velocity.y = -200;
-        // }
-        //
-        // if (this.cursors.left.isDown) {
-        //     this.player.body.velocity.x = -200;
-        // } else if (this.cursors.right.isDown) {
-        //     this.player.body.velocity.x = 200;
-        // } else {
-        //     this.player.body.velocity.x = 0;
-        // }
+        this.physics.arcade.overlap(this.player, this.goal, () => {
+            this.levelComplete();
+        });
+
+        // TODO: for debugging purposes
+        if (this.cursors.up.isDown) {
+            this.player.body.velocity.y = -200;
+        }
+
+        if (this.cursors.left.isDown) {
+            this.player.body.velocity.x = -200;
+        } else if (this.cursors.right.isDown) {
+            this.player.body.velocity.x = 200;
+        } else {
+            this.player.body.velocity.x = 0;
+        }
     }
 
     render() {
         if (this.showDebug) {
             this.game.debug.body(this.player);
+            this.game.debug.body(this.goal);
             this.enemies.forEach((enemy) => this.game.debug.body(enemy));
         }
     }
@@ -105,6 +116,10 @@ export class StartState extends Phaser.State {
     }
 
     gameOver() {
+        this.game.state.start('start', true, false, this.score);
+    }
+
+    levelComplete() {
         this.game.state.start('start', true, false, this.score);
     }
 
