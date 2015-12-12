@@ -27,6 +27,9 @@ export class StartState extends Phaser.State {
         // Create player
         this.player = new Player(this, 0, 0);
 
+        // Create coins
+        this.coins = this.game.add.group();
+
         // Create goal
         this.goal = new Goal(this, 0, 0);
 
