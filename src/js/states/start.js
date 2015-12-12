@@ -74,18 +74,18 @@ export class StartState extends Phaser.State {
             this.levelComplete();
         });
 
-        // TODO: for debugging purposes
-        if (this.cursors.up.isDown) {
-            this.player.body.velocity.y = -200;
-        }
-
-        if (this.cursors.left.isDown) {
-            this.player.body.velocity.x = -200;
-        } else if (this.cursors.right.isDown) {
-            this.player.body.velocity.x = 200;
-        } else {
-            this.player.body.velocity.x = 0;
-        }
+        // // TODO: for debugging purposes
+        // if (this.cursors.up.isDown) {
+        //     this.player.body.velocity.y = -200;
+        // }
+        //
+        // if (this.cursors.left.isDown) {
+        //     this.player.body.velocity.x = -200;
+        // } else if (this.cursors.right.isDown) {
+        //     this.player.body.velocity.x = 200;
+        // } else {
+        //     this.player.body.velocity.x = 0;
+        // }
     }
 
     render() {
