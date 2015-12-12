@@ -21,6 +21,9 @@ export class StartState extends Phaser.State {
         // Create player
         this.player = new Player(this, 0, 0);
 
+        //Fireball group
+        this.fireballs = this.game.add.group();
+
         // Create enemies
         this.enemies = this.game.add.group();
 
@@ -42,6 +45,13 @@ export class StartState extends Phaser.State {
     update() {
         this.game.physics.arcade.collide(this.player, this.map.platforms);
         this.game.physics.arcade.collide(this.enemies, this.map.platforms);
+        this.game.physics.arcade.collide(this.fireballs, this.map.platforms, function(fireball) {
+            fireball.kill();
+        });
+        this.game.physics.arcade.collide(this.fireballs, this.enemies, function(fireball, enemy) {
+            fireball.kill();
+            enemy.kill();
+        });
 
         this.physics.arcade.overlap(this.player, this.enemies, function() {
             // TODO:
