@@ -1,6 +1,6 @@
 export class Spike extends Phaser.Sprite {
-    constructor(state, x, y) {
-        super(state.game, x, y, 'spikes');
+    constructor(state, data) {
+        super(state.game, data.x + 16, data.y - 16, 'spikes');
         this.gameState = state;
         this.anchor.setTo(0.5);
         this.game.add.existing(this);

@@ -1,6 +1,6 @@
 export class Enemy extends Phaser.Sprite {
-    constructor(state, x, y) {
-        super(state.game, x, y, 'enemy');
+    constructor(state, data) {
+        super(state.game, data.x + 16, data.y - 16, 'enemy');
         this.gameState = state;
         this.anchor.setTo(0.5);
         this.game.add.existing(this);

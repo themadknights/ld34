@@ -42,6 +42,10 @@ export class StartState extends Phaser.State {
         // Create enemies
         this.enemies = this.game.add.group();
 
+        // Create shooters
+        this.shooters = this.game.add.group();
+        this.projectiles = this.game.add.group();
+
         // Load level
         this.map.loadLevel();
 
@@ -90,6 +94,14 @@ export class StartState extends Phaser.State {
             }
         });
 
+        this.physics.arcade.overlap(this.player, this.shooters, (player, shooter) => {
+            shooter.shoot();
+        });
+
+        this.physics.arcade.overlap(this.player, this.projectiles, () => {
+            this.player.damage(1);
+        });
+
         // // TODO: for debugging purposes
         // if (this.cursors.up.isDown) {
         //     this.player.body.velocity.y = -200;
@@ -109,6 +121,9 @@ export class StartState extends Phaser.State {
             this.game.debug.body(this.player);
             this.game.debug.body(this.goal);
             this.enemies.forEach((enemy) => this.game.debug.body(enemy));
+            this.spikes.forEach((spike) => this.game.debug.body(spike));
+            this.shooters.forEach((shooter) => this.game.debug.body(shooter));
+            this.projectiles.forEach((projectile) => this.game.debug.body(projectile));
         }
     }
 
