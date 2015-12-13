@@ -7,5 +7,6 @@ export class MoveSpell extends Spell {
 
     castAction() {
         this.user.body.velocity.x = 100;
+        this.user.play("walk");
     }
 }

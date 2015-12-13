@@ -24,7 +24,8 @@ export class Player extends Phaser.Sprite {
         this.game.physics.arcade.enable(this);
         this.game.camera.follow(this);
 
-        this.animations.add("idle", [0, 1], 10, true);
+        this.animations.add("idle", [0, 1], 2, true);
+        this.animations.add("walk", [8,9,10,11], 4, true);
         this.play("idle");
 
         this.maxHealth = 3;
