@@ -111,22 +111,7 @@ export class StartState extends Phaser.State {
             this.player.damage(1);
         });
 
-        this.physics.arcade.collide(this.player, this.mobilePlatforms, () => {
-            // this.player.damage(1);
-        });
-
-        // // TODO: for debugging purposes
-        // if (this.cursors.up.isDown) {
-        //     this.player.body.velocity.y = -200;
-        // }
-        //
-        // if (this.cursors.left.isDown) {
-        //     this.player.body.velocity.x = -200;
-        // } else if (this.cursors.right.isDown) {
-        //     this.player.body.velocity.x = 200;
-        // } else {
-        //     this.player.body.velocity.x = 0;
-        // }
+        this.physics.arcade.collide(this.player, this.mobilePlatforms);
     }
 
     render() {
@@ -142,6 +127,12 @@ export class StartState extends Phaser.State {
     }
 
     createHUD () {
+        this.hudTopBackground = this.game.add.sprite(0, 0, 'hudBg');
+        this.hudTopBackground.fixedToCamera = true;
+        this.hudBottomBackground = this.game.add.sprite(0, this.game.height - 30, 'hudBg');
+        this.hudBottomBackground.fixedToCamera = true;
+        this.hudBottomBackground.alpha = 0.7;
+
         this.score = 0;
         this.scoreLabel = this.game.add.bitmapText(this.game.width - 10, 10, 'carrier_command', `Score: ${pad(this.score)}`, 12);
         this.scoreLabel.anchor.setTo(1, 0);
@@ -157,6 +148,10 @@ export class StartState extends Phaser.State {
             icon.anchor.setTo(0.5);
             this.healthIcons.add(icon);
         }
+
+        //Keys group
+        this.hudKeys = this.game.add.group();
+
         this.updateHealthHud();
     }
 
@@ -172,6 +167,17 @@ export class StartState extends Phaser.State {
         for (let i = 0; i < this.player.maxHealth; i += 1) {
             this.healthIcons.children[i].frame = i < this.player.health ? 0 : 1;
         }
+    }
+
+    updateSpellHud (letter) {
+        let keyHud = this.game.add.sprite(16 + 32 * this.hudKeys.length + 1, this.game.height - 16, 'keys', letter === 'Z' ? 0 : 1);
+        keyHud.fixedToCamera = true;
+        keyHud.anchor.setTo(0.5);
+        this.hudKeys.add(keyHud);
+    }
+
+    clearSpellHud() {
+        this.hudKeys.removeAll();
     }
 
     updateScoreHud () {

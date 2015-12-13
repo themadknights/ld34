@@ -59,9 +59,11 @@ export class Player extends Phaser.Sprite {
         this.castBar.play('casting');
         this.spellTimer.stop();
         this.spell += keyCode;
+        this.gameState.updateSpellHud(keyCode);
         this.spellTimer.add(Phaser.Timer.HALF, function() {
             this.cast();
             this.spell = "";
+            this.gameState.clearSpellHud();
         }, this);
         this.spellTimer.start();
     }
