@@ -23,6 +23,7 @@ module.exports = {
         ],
         styles: `${sourceFolder}/styles/**/*.css`,
         images: `${sourceFolder}/images/**/*.*`,
+        sounds: `${sourceFolder}/sounds/**/*.*`,
         json: `${sourceFolder}/json/**/*.*`,
         fonts: `${sourceFolder}/fonts/**/*.*`,
         cname: `${configFolder}/CNAME`
@@ -41,6 +42,9 @@ module.exports = {
     },
     images: {
         destFolder: `${destFolder}/images`
+    },
+    sounds: {
+        destFolder: `${destFolder}/sounds`
     },
     json: {
         destFolder: `${destFolder}/json`
