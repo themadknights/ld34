@@ -7,6 +7,7 @@ export class PreloadState extends Phaser.State {
         //this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
         this.scale.pageAlignHorizontally = true;
         this.scale.pageAlignVertically = true;
+        this.game.stage.backgroundColor = 0x04080e;
     }
 
     preload() {
