@@ -10,7 +10,7 @@
          "width":40,
          "x":0,
          "y":0
-        }, 
+        },
         {
          "draworder":"topdown",
          "height":0,
@@ -31,7 +31,7 @@
                  "width":64,
                  "x":64,
                  "y":480
-                }, 
+                },
                 {
                  "gid":42,
                  "height":64,
@@ -54,7 +54,7 @@
          "width":0,
          "x":0,
          "y":0
-        }, 
+        },
         {
          "draworder":"topdown",
          "height":0,
@@ -66,7 +66,7 @@
          "width":0,
          "x":0,
          "y":0
-        }, 
+        },
         {
          "draworder":"topdown",
          "height":0,
@@ -78,7 +78,7 @@
          "width":0,
          "x":0,
          "y":0
-        }, 
+        },
         {
          "draworder":"topdown",
          "height":20,
@@ -100,7 +100,7 @@
                  "width":32,
                  "x":480,
                  "y":480
-                }, 
+                },
                 {
                  "gid":48,
                  "height":32,
@@ -148,7 +148,7 @@
          "tilecount":36,
          "tileheight":32,
          "tilewidth":32
-        }, 
+        },
         {
          "firstgid":37,
          "image":"..\/images\/enemy.png",
@@ -164,7 +164,7 @@
          "tilecount":1,
          "tileheight":32,
          "tilewidth":32
-        }, 
+        },
         {
          "firstgid":38,
          "image":"..\/images\/player.png",
@@ -180,7 +180,7 @@
          "tilecount":4,
          "tileheight":64,
          "tilewidth":64
-        }, 
+        },
         {
          "firstgid":42,
          "image":"..\/images\/goal.png",
@@ -196,7 +196,7 @@
          "tilecount":1,
          "tileheight":64,
          "tilewidth":64
-        }, 
+        },
         {
          "firstgid":43,
          "image":"..\/images\/coin.png",
@@ -212,7 +212,7 @@
          "tilecount":1,
          "tileheight":32,
          "tilewidth":32
-        }, 
+        },
         {
          "firstgid":44,
          "image":"..\/images\/spikes.png",
@@ -228,7 +228,7 @@
          "tilecount":4,
          "tileheight":32,
          "tilewidth":32
-        }, 
+        },
         {
          "firstgid":48,
          "image":"..\/images\/shooter.png",
