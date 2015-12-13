@@ -64,6 +64,11 @@ gulp.task('libs', function () {
 gulp.task('scripts', function () {
     gulp.src(config.files.scripts)
         .pipe($.plumber())
+        .pipe($.preprocess({
+            context: {
+                NODE_ENV: env
+            }
+        }))
         .pipe($.babel({
             modules: 'umd'
         }))

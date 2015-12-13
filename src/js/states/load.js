@@ -38,6 +38,12 @@ export class LoadState extends Phaser.State {
     }
 
     create () {
-        this.game.state.start('start');
+        let defaultScene = 'start';
+
+        // @if NODE_ENV='production'
+        defaultScene = 'publisher';
+        // @endif
+
+        this.game.state.start(defaultScene);
     }
 }

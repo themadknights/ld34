@@ -8,7 +8,14 @@ export class PreloadState extends Phaser.State {
         this.scale.pageAlignHorizontally = true;
         this.scale.pageAlignVertically = true;
         this.game.stage.backgroundColor = 0x1a2935;
-        this.game.sound.mute = true; //TODO: disable in production
+
+        let defaultMuted = true;
+
+        // @if NODE_ENV = 'production'
+        defaultMuted = false;
+        // @endif
+
+        this.game.sound.mute = defaultMuted;
     }
 
     preload() {
