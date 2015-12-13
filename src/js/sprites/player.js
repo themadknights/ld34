@@ -24,10 +24,18 @@ export class Player extends Phaser.Sprite {
         //Spell
         this.spell = "";
         this.spellTimer = this.game.time.create(false);
+
+        //Shield
+        this.shield = this.addChild(this.game.make.sprite(40, 0, 'shield'));
+        this.shield.anchor.setTo(0.5);
+        this.game.physics.arcade.enable(this.shield);
+        this.shield.body.allowGravity = false;
+        this.shield.body.immovable = true;
+        this.shield.kill();
+        this.shieldTimer = this.game.time.create(false);
     }
 
     cast() {
-        console.log(this.spell);
         switch(this.spell) {
             case "Z": //Move
                 this.body.velocity.x = 100;
@@ -38,8 +46,15 @@ export class Player extends Phaser.Sprite {
             case "X": //Jump
                 this.body.velocity.y = -200;
                 break;
+            case "XZ": //Shield
+                this.shield.revive();
+                this.shieldTimer.stop();
+                this.shieldTimer.add(Phaser.Timer.SECOND, function() {
+                    this.shield.kill();
+                }, this);
+                this.shieldTimer.start();
+                break;
             case "ZXXZ": //Fireball
-                console.log(this.gameState.fireballs.length);
                 let fireball = this.gameState.fireballs.getFirstExists(false);
                 if(fireball) {
                     fireball.reset(this.x + 30, this.y);

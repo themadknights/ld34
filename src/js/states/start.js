@@ -78,6 +78,10 @@ export class StartState extends Phaser.State {
 
         this.game.physics.arcade.collide(this.projectiles, this.map.platforms);
 
+        this.game.physics.arcade.collide(this.player.shield, this.projectiles, function(shield, projectile) {
+            projectile.kill();
+        });
+
         this.physics.arcade.overlap(this.player, this.enemies, () => {
             this.player.damage(1);
         });
@@ -126,6 +130,7 @@ export class StartState extends Phaser.State {
             this.spikes.forEach((spike) => this.game.debug.body(spike));
             this.shooters.forEach((shooter) => this.game.debug.body(shooter));
             this.projectiles.forEach((projectile) => this.game.debug.body(projectile));
+            this.game.debug.body(this.player.shield);
         }
     }
 
