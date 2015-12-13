@@ -1,14 +1,23 @@
-let spells = {
-    move: "Z",
-    stop: "ZX",
-    jump: "X",
-    fireball: "ZXXZ",
-    levitation: "ZZ"
-};
+import { MoveSpell } from 'spells/move';
+import { StopSpell } from 'spells/stop';
+import { JumpSpell } from 'spells/jump';
+import { FireballSpell } from 'spells/fireball';
+import { ShieldSpell } from 'spells/shield';
+import { LevitationSpell } from 'spells/levitation';
 
 export class Player extends Phaser.Sprite {
     constructor(state, x, y) {
         super(state.game, x, y, 'player');
+
+        this.spells = {
+            "Z": new MoveSpell(this),
+            "ZX": new StopSpell(this),
+            "X": new JumpSpell(this),
+            "ZXXZ": new FireballSpell(this),
+            "XZ": new ShieldSpell(this),
+            "ZZ": new LevitationSpell(this)
+        };
+
         this.gameState = state;
         this.anchor.setTo(0.5);
         this.game.add.existing(this);
@@ -32,53 +41,16 @@ export class Player extends Phaser.Sprite {
         //Spell
         this.spell = "";
         this.spellTimer = this.game.time.create(false);
-
-        //Shield
-        this.shield = this.addChild(this.game.make.sprite(40, 0, 'shield'));
-        this.shield.anchor.setTo(0.5);
-        this.game.physics.arcade.enable(this.shield);
-        this.shield.body.allowGravity = false;
-        this.shield.body.immovable = true;
-        this.shield.kill();
-        this.shieldTimer = this.game.time.create(false);
     }
 
     cast() {
-        switch(this.spell) {
-            case spells.move: //Move
-                this.body.velocity.x = 100;
-                break;
-            case spells.stop: //Stop
-                this.body.velocity.x = 0;
-                break;
-            case spells.jump: //Jump
-                this.body.velocity.y = -200;
-                break;
-            case spells.fireball: //Fireball
-                console.log(this.gameState.fireballs.length);
-                let fireball = this.gameState.fireballs.getFirstExists(false);
-                if(fireball) {
-                    fireball.reset(this.x + 30, this.y);
-                } else {
-                    fireball = this.gameState.fireballs.create(this.x + 30, this.y, 'fireball');
-                }
-                fireball.anchor.setTo(0.5);
-                this.game.physics.arcade.enable(fireball);
-                fireball.body.allowGravity = false;
-                fireball.body.velocity.x = 500;
-                break;
-            case "XZ": //Shield
-                this.shield.revive();
-                this.shieldTimer.stop();
-                this.shieldTimer.add(Phaser.Timer.SECOND, function() {
-                    this.shield.kill();
-                }, this);
-                this.shieldTimer.start();
-                break;
-            case spells.levitation:
-                this.body.allowGravity = false;
-                this.body.velocity.y = 0;
-                break;
+        if (this.currentSpell) {
+            this.currentSpell.cancel();
+        }
+
+        if (this.spells[this.spell]) {
+            this.currentSpell = this.spells[this.spell];
+            this.currentSpell.cast();
         }
     }
 
