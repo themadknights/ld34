@@ -49,7 +49,11 @@ export class Player extends Phaser.Sprite {
                 fireball.anchor.setTo(0.5);
                 this.game.physics.arcade.enable(fireball);
                 fireball.body.allowGravity = false;
-                fireball.body.velocity.x = 500;
+                fireball.body.velocity.x = 400;
+
+                fireball.animations.add("fireball_spell", [0,1,2,3], 8, true);
+                fireball.play("fireball_spell");
+
                 break;
         }
     }
