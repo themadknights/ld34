@@ -15,6 +15,9 @@ export class Map extends Phaser.Tilemap {
 
         this.platforms = this.createLayer('foreground');
         this.platforms.resizeWorld();
+
+        //TODO: Take audio from tiled
+        this.audio = state.game.add.audio('music0', 0.05, true);
     }
 
     loadLevel() {
@@ -23,6 +26,9 @@ export class Map extends Phaser.Tilemap {
         this.loadSpikes();
         this.loadShooters();
         this.loadMobilePlatforms();
+
+        this.gameState.game.sound.stopAll();
+        this.audio.play();
     }
 
     loadCharacters() {
