@@ -67,7 +67,10 @@ export class StartState extends Phaser.State {
     }
 
     update() {
-        this.game.physics.arcade.collide(this.player, this.map.platforms);
+        if(!this.player.mustJump) {
+            this.game.physics.arcade.collide(this.player, this.map.platforms);
+        }
+        this.player.mustJump = false;
 
         this.game.physics.arcade.collide(this.enemies, this.map.platforms);
 
@@ -123,6 +126,7 @@ export class StartState extends Phaser.State {
             this.shooters.forEach((shooter) => this.game.debug.body(shooter));
             this.projectiles.forEach((projectile) => this.game.debug.body(projectile));
             this.game.debug.body(this.player.spells['XZ'].shield);
+            this.game.debug.text(this.player.body.velocity, 10, 60);
         }
     }
 
