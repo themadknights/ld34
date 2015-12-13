@@ -1,6 +1,23 @@
+import { MoveSpell } from 'spells/move';
+import { StopSpell } from 'spells/stop';
+import { JumpSpell } from 'spells/jump';
+import { FireballSpell } from 'spells/fireball';
+import { ShieldSpell } from 'spells/shield';
+import { LevitationSpell } from 'spells/levitation';
+
 export class Player extends Phaser.Sprite {
     constructor(state, x, y) {
         super(state.game, x, y, 'player');
+
+        this.spells = {
+            "Z": new MoveSpell(this),
+            "ZX": new StopSpell(this),
+            "X": new JumpSpell(this),
+            "ZXXZ": new FireballSpell(this),
+            "XZ": new ShieldSpell(this),
+            "ZZ": new LevitationSpell(this)
+        };
+
         this.gameState = state;
         this.anchor.setTo(0.5);
         this.game.add.existing(this);
@@ -27,34 +44,13 @@ export class Player extends Phaser.Sprite {
     }
 
     cast() {
-        console.log(this.spell);
-        switch(this.spell) {
-            case "Z": //Move
-                this.body.velocity.x = 100;
-                break;
-            case "ZX": //Stop
-                this.body.velocity.x = 0;
-                break;
-            case "X": //Jump
-                this.body.velocity.y = -200;
-                break;
-            case "ZXXZ": //Fireball
-                console.log(this.gameState.fireballs.length);
-                let fireball = this.gameState.fireballs.getFirstExists(false);
-                if(fireball) {
-                    fireball.reset(this.x + 30, this.y);
-                } else {
-                    fireball = this.gameState.fireballs.create(this.x + 30, this.y, 'fireball');
-                }
-                fireball.anchor.setTo(0.5);
-                this.game.physics.arcade.enable(fireball);
-                fireball.body.allowGravity = false;
-                fireball.body.velocity.x = 400;
+        if (this.currentSpell) {
+            this.currentSpell.cancel();
+        }
 
-                fireball.animations.add("fireball_spell", [0,1,2,3], 8, true);
-                fireball.play("fireball_spell");
-
-                break;
+        if (this.spells[this.spell]) {
+            this.currentSpell = this.spells[this.spell];
+            this.currentSpell.cast();
         }
     }
 

@@ -12,6 +12,7 @@ export class LoadState extends Phaser.State {
         this.load.spritesheet('spikes', 'images/spikes.png', 32, 32, 2);
         this.load.spritesheet('enemy', 'images/slime.png', 32, 32, 3);
         this.load.spritesheet('fireball', 'images/fireball.png', 32, 32, 4);
+        this.load.image('shield', 'images/shield.png');
         this.load.image('shooter', 'images/shooter.png');
         this.load.image('projectile', 'images/projectile.png');
         this.load.image('mobilePlatform', 'images/mobile_platform.png');
@@ -22,7 +23,7 @@ export class LoadState extends Phaser.State {
         this.load.tilemap('level1', 'json/level1.json', null, Phaser.Tilemap.TILED_JSON);
         this.load.tilemap('shooterTest', 'json/shooterTest.json', null, Phaser.Tilemap.TILED_JSON);
         this.load.tilemap('platformTest', 'json/platformTest.json', null, Phaser.Tilemap.TILED_JSON);
-
+        this.load.tilemap('levitationTest', 'json/levitationTest.json', null, Phaser.Tilemap.TILED_JSON);
     }
 
     create () {

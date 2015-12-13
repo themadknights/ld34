@@ -10,6 +10,8 @@ module.exports = {
     files: {
         scripts: [
             `${sourceFolder}/js/utils.js`,
+            `${sourceFolder}/js/spells/base.js`,
+            `${sourceFolder}/js/spells/**/*.js`,
             `${sourceFolder}/js/sprites/**/*.js`,
             `${sourceFolder}/js/map.js`,
             `${sourceFolder}/js/states/**/*.js`,
