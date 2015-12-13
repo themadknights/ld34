@@ -23,7 +23,11 @@ export class LoadState extends Phaser.State {
         this.load.tilemap('level1', 'json/level1.json', null, Phaser.Tilemap.TILED_JSON);
         this.load.tilemap('shooterTest', 'json/shooterTest.json', null, Phaser.Tilemap.TILED_JSON);
         this.load.tilemap('platformTest', 'json/platformTest.json', null, Phaser.Tilemap.TILED_JSON);
-
+        this.load.audio('fireballFx', 'sounds/fireball.wav');
+        this.load.audio('memoryFx', 'sounds/memory.wav');
+        this.load.audio('jumpFx', 'sounds/jump.wav');
+        this.load.audio('coinFx', 'sounds/coin.wav');
+        this.load.audio('shieldFx', 'sounds/shield.wav');
     }
 
     create () {

@@ -9,5 +9,11 @@ export class Coin extends Phaser.Sprite {
         this.body.allowGravity = false;
 
         this.value = 100;
+
+        this.fx = this.game.add.audio('coinFx');
+        this.fx.volume = 0.1;
+        this.events.onKilled.add(function() {
+            this.fx.play();
+        }, this);
     }
 }
