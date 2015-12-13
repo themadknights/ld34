@@ -4,6 +4,7 @@ import { JumpSpell } from 'spells/jump';
 import { FireballSpell } from 'spells/fireball';
 import { ShieldSpell } from 'spells/shield';
 import { LevitationSpell } from 'spells/levitation';
+import { MuteSpell } from 'spells/mute';
 
 export class Player extends Phaser.Sprite {
     constructor(state, x, y) {
@@ -15,7 +16,8 @@ export class Player extends Phaser.Sprite {
             "X": new JumpSpell(this),
             "ZXXZ": new FireballSpell(this),
             "XZ": new ShieldSpell(this),
-            "ZZ": new LevitationSpell(this)
+            "ZZ": new LevitationSpell(this),
+            "ZZZXXX": new MuteSpell(this)
         };
 
         this.gameState = state;

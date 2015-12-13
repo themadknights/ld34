@@ -38,6 +38,6 @@ export class LoadState extends Phaser.State {
     }
 
     create () {
-        this.game.state.start('publisher');
+        this.game.state.start('start');
     }
 }
