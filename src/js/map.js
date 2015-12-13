@@ -3,8 +3,8 @@ import { Coin } from 'sprites/coin';
 import { Spike } from 'sprites/spike';
 
 export class Map extends Phaser.Tilemap {
-    constructor(state) {
-        super(state.game, 'level1');
+    constructor(state, level) {
+        super(state.game, level);
 
         this.gameState = state;
 
