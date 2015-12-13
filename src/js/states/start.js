@@ -22,7 +22,7 @@ export class StartState extends Phaser.State {
         this.physics.arcade.gravity.y = 300;
 
         // Create map
-        this.map = new Map(this, 'platformTest');
+        this.map = new Map(this, 'level0');
 
         // Create player
         this.player = new Player(this, 0, 0);
@@ -75,6 +75,8 @@ export class StartState extends Phaser.State {
             fireball.kill();
             enemy.kill();
         });
+
+        this.game.physics.arcade.collide(this.projectiles, this.map.platforms);
 
         this.physics.arcade.overlap(this.player, this.enemies, () => {
             this.player.damage(1);

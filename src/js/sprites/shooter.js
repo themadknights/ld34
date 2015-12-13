@@ -9,25 +9,31 @@ export class Shooter extends Phaser.Sprite {
         this.body.allowGravity = false;
 
         if (data.properties) {
+            this.ammo = data.properties.ammo || 1;
+
+            this.ammoText = this.addChild(this.game.make.bitmapText(0, -30, 'carrier_command', `${this.ammo}`, 12));
+            this.ammoText.anchor.setTo(0.5);
+
             if (data.properties.facing === "left") {
                 this.scale.setTo(-1, 1);
                 this.body.offset.x = -150;
                 this.projectileOffset = -30;
                 this.projectileSpeed = -100;
+                this.ammoText.scale.setTo(-1, 1);
             } else {
                 this.body.offset.x = 150;
                 this.projectileOffset = 30;
                 this.projectileSpeed = 100;
             }
             this.body.width = 300;
-
-            this.ammo = data.properties.ammo || 1;
         }
+
     }
 
     shoot() {
         if (!this.reloading && this.ammo > 0) {
             this.ammo -= 1;
+            this.ammoText.text = `${this.ammo}`;
             this.reloading = true;
             this.createProjectile();
             let timer = this.game.time.create(this.game, true);
@@ -47,7 +53,7 @@ export class Shooter extends Phaser.Sprite {
         }
         projectile.anchor.setTo(0.5);
         this.game.physics.arcade.enable(projectile);
-        projectile.body.allowGravity = false;
+        projectile.body.bounce.y = 0.3;
         projectile.body.velocity.x = this.projectileSpeed;
     }
 }
