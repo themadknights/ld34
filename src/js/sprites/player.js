@@ -37,7 +37,10 @@ export class Player extends Phaser.Sprite {
         this.castBar = this.addChild(this.game.make.sprite(0, -40, 'castbar'));
         this.castBar.anchor.setTo(0.5);
         this.castBar.scale.setTo(12, 4);
-        this.castBar.animations.add('casting', [0, 1, 2, 3, 4, 5, 0], 12, false);
+        let animation = this.castBar.animations.add('casting', [0, 1, 2, 3, 4, 5, 0], 75, false);
+        animation.onComplete.add(function() {
+            this.currentSpell.cast();
+        }, this);
 
         //Spell
         this.spell = "";
@@ -51,7 +54,7 @@ export class Player extends Phaser.Sprite {
 
         if (this.spells[this.spell]) {
             this.currentSpell = this.spells[this.spell];
-            this.currentSpell.cast();
+            this.castBar.play('casting');
         }
     }
 
