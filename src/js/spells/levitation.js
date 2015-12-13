@@ -2,7 +2,7 @@ import { Spell } from 'spells/base';
 
 export class LevitationSpell extends Spell {
     constructor(user) {
-        super(user);
+        super(user, 'levitateFx');
         this.duration = 2;
     }
 
