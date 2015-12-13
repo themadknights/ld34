@@ -1,3 +1,11 @@
+let spells = {
+    move: "Z",
+    stop: "ZX",
+    jump: "X",
+    fireball: "ZXXZ",
+    levitation: "ZZ"
+};
+
 export class Player extends Phaser.Sprite {
     constructor(state, x, y) {
         super(state.game, x, y, 'player');
@@ -29,16 +37,16 @@ export class Player extends Phaser.Sprite {
     cast() {
         console.log(this.spell);
         switch(this.spell) {
-            case "Z": //Move
+            case spells.move: //Move
                 this.body.velocity.x = 100;
                 break;
-            case "ZX": //Stop
+            case spells.stop: //Stop
                 this.body.velocity.x = 0;
                 break;
-            case "X": //Jump
+            case spells.jump: //Jump
                 this.body.velocity.y = -200;
                 break;
-            case "ZXXZ": //Fireball
+            case spells.fireball: //Fireball
                 console.log(this.gameState.fireballs.length);
                 let fireball = this.gameState.fireballs.getFirstExists(false);
                 if(fireball) {
@@ -50,6 +58,10 @@ export class Player extends Phaser.Sprite {
                 this.game.physics.arcade.enable(fireball);
                 fireball.body.allowGravity = false;
                 fireball.body.velocity.x = 500;
+                break;
+            case spells.levitation:
+                this.body.allowGravity = false;
+                this.body.velocity.y = 0;
                 break;
         }
     }
