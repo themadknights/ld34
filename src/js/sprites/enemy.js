@@ -9,7 +9,7 @@ export class Enemy extends Phaser.Sprite {
         this.body.velocity.x = 50;
         this.scale.setTo(-1, 1);
 
-        this.animations.add("patrol", [0, 1], 4, true);
+        this.animations.add("patrol", [0,1,2,1], 4, true);
         this.play("patrol");
     }
 
