@@ -46,6 +46,9 @@ export class StartState extends Phaser.State {
         this.shooters = this.game.add.group();
         this.projectiles = this.game.add.group();
 
+        // Create mobile platforms
+        this.mobilePlatforms = this.game.add.group();
+
         // Load level
         this.map.loadLevel();
 
@@ -100,6 +103,10 @@ export class StartState extends Phaser.State {
 
         this.physics.arcade.overlap(this.player, this.projectiles, () => {
             this.player.damage(1);
+        });
+
+        this.physics.arcade.collide(this.player, this.mobilePlatforms, () => {
+            // this.player.damage(1);
         });
 
         // // TODO: for debugging purposes

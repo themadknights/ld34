@@ -54,8 +54,54 @@
          "width":0,
          "x":0,
          "y":0
+        }, 
+        {
+         "draworder":"topdown",
+         "height":20,
+         "name":"platforms",
+         "objects":[
+                {
+                 "gid":49,
+                 "height":32,
+                 "id":62,
+                 "name":"",
+                 "properties":
+                    {
+                     "maxDistance":"6",
+                     "speed":"-100"
+                    },
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":128,
+                 "x":480,
+                 "y":512
+                }, 
+                {
+                 "gid":49,
+                 "height":32,
+                 "id":63,
+                 "name":"",
+                 "properties":
+                    {
+                     "maxDistance":"6",
+                     "speed":"100"
+                    },
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":128,
+                 "x":608,
+                 "y":512
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "width":40,
+         "x":0,
+         "y":0
         }],
- "nextobjectid":62,
+ "nextobjectid":68,
  "orientation":"orthogonal",
  "properties":
     {
@@ -175,6 +221,22 @@
          "tilecount":1,
          "tileheight":32,
          "tilewidth":32
+        }, 
+        {
+         "firstgid":49,
+         "image":"..\/images\/mobile_platform.png",
+         "imageheight":32,
+         "imagewidth":128,
+         "margin":0,
+         "name":"mobile_platform",
+         "properties":
+            {
+
+            },
+         "spacing":0,
+         "tilecount":1,
+         "tileheight":32,
+         "tilewidth":128
         }],
  "tilewidth":32,
  "version":1,
