@@ -6,6 +6,9 @@ export class Coin extends Phaser.Sprite {
         this.game.add.existing(this);
         this.game.physics.arcade.enable(this);
 
+        this.animations.add("spin", [0,1,2,3,4,3,2,1], 8, true);
+        this.play("spin");
+
         this.body.allowGravity = false;
 
         this.value = 100;
