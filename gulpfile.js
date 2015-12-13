@@ -62,6 +62,7 @@ gulp.task('scripts', function () {
         }))
         .pipe($.concat(config.scripts.outFile))
         .pipe($.if(env === 'production', $.uglify()))
+        .pipe($.if(env === 'production', $.stripDebug()))
         .pipe(gulp.dest(config.scripts.destFolder))
         .pipe($.connect.reload());
 });
