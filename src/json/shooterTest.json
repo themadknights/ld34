@@ -17,7 +17,7 @@
          "name":"characters",
          "objects":[
                 {
-                 "gid":56,
+                 "gid":57,
                  "height":64,
                  "id":1,
                  "name":"player",
@@ -33,20 +33,20 @@
                  "y":480
                 }, 
                 {
-                 "gid":68,
-                 "height":64,
-                 "id":9,
+                 "gid":56,
+                 "height":96,
+                 "id":62,
                  "name":"goal",
                  "properties":
                     {
 
                     },
                  "rotation":0,
-                 "type":"goal",
+                 "type":"",
                  "visible":true,
-                 "width":64,
-                 "x":960,
-                 "y":480
+                 "width":96,
+                 "x":955,
+                 "y":479
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -124,7 +124,7 @@
          "x":0,
          "y":0
         }],
- "nextobjectid":62,
+ "nextobjectid":64,
  "orientation":"orthogonal",
  "properties":
     {
@@ -167,6 +167,22 @@
         }, 
         {
          "firstgid":56,
+         "image":"..\/images\/goal.png",
+         "imageheight":96,
+         "imagewidth":96,
+         "margin":0,
+         "name":"goal",
+         "properties":
+            {
+
+            },
+         "spacing":0,
+         "tilecount":1,
+         "tileheight":96,
+         "tilewidth":96
+        }, 
+        {
+         "firstgid":57,
          "image":"..\/images\/player.png",
          "imageheight":192,
          "imagewidth":256,
@@ -178,22 +194,6 @@
             },
          "spacing":0,
          "tilecount":12,
-         "tileheight":64,
-         "tilewidth":64
-        }, 
-        {
-         "firstgid":68,
-         "image":"..\/images\/goal.png",
-         "imageheight":64,
-         "imagewidth":64,
-         "margin":0,
-         "name":"goal",
-         "properties":
-            {
-
-            },
-         "spacing":0,
-         "tilecount":1,
          "tileheight":64,
          "tilewidth":64
         }, 
