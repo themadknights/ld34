@@ -2,7 +2,7 @@ import { Spell } from 'spells/base';
 
 export class FireballSpell extends Spell {
     constructor(user) {
-        super(user);
+        super(user, 'fireballFx');
     }
 
     castAction() {
