@@ -4,8 +4,12 @@ export class MenuState extends Phaser.State {
     }
 
     create() {
+        this.logo = this.game.add.image(this.game.world.centerX, this.game.world.centerY - 60, 'logo');
+        this.logo.fixedToCamera = true;
+        this.logo.anchor.setTo(0.5);
+
         //Add 'Tha mage'
-        this.mage = this.game.add.sprite(300, 120, 'player');
+        this.mage = this.game.add.sprite(200, 470, 'player');
         this.mage.animations.add('cast', [0, 1], 10, true);
 
         this.castBar = this.mage.addChild(this.game.make.sprite(0, -20, 'castbar'));
@@ -28,14 +32,14 @@ export class MenuState extends Phaser.State {
             this.castBar.play('casting');
             this.castingBarAnimation.onComplete.add(function() {
                 //TODO: Credits State
-                this.game.state.start('start');
+                this.game.state.start('credits');
             }, this);
         }, this);
 
         //Create menu
-        this.game.add.bitmapText(400, 110, 'carrier_command', 'List of Spells: ', 16);
-        this.game.add.bitmapText(420, 140, 'carrier_command', 'Start (Z)', 12);
-        this.game.add.bitmapText(420, 160, 'carrier_command', 'Credits (X)', 12);
+        this.game.add.bitmapText(300, 460, 'carrier_command', 'List of Spells: ', 16);
+        this.game.add.bitmapText(320, 490, 'carrier_command', 'Start Game (Z)', 12);
+        this.game.add.bitmapText(320, 520, 'carrier_command', 'Credits (X)', 12);
     }
 
 }
