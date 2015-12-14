@@ -65,6 +65,17 @@
       "shield": [
           { "avatar": "mage", "text": "placeholder" }
       ]
+  },
+  "level2": {
+      "fire": [
+          { "avatar": "mage", "text": "placeholder" }
+      ],
+      "levitate": [
+          { "avatar": "mage", "text": "placeholder" }
+      ],
+      "finish": [
+          { "avatar": "mage", "text": "placeholder" }
+      ]
   }
 
 }
