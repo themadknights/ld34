@@ -1,28 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="80" height="20" tilewidth="32" tileheight="32" nextobjectid="157">
+ <properties>
+  <property name="music" value="music1"/>
+ </properties>
  <tileset firstgid="1" name="tileset" tilewidth="32" tileheight="32" tilecount="54">
   <image source="../images/tileset.png" width="192" height="288"/>
  </tileset>
  <tileset firstgid="55" name="enemy" tilewidth="32" tileheight="32" tilecount="1">
   <image source="../images/enemy.png" width="32" height="32"/>
  </tileset>
- <tileset firstgid="56" name="player" tilewidth="64" tileheight="64" tilecount="12">
-  <image source="../images/player.png" width="256" height="192"/>
+ <tileset firstgid="56" name="player" tilewidth="64" tileheight="64" tilecount="16">
+  <image source="../images/player.png" width="256" height="256"/>
  </tileset>
- <tileset firstgid="68" name="goal" tilewidth="64" tileheight="64" tilecount="1">
+ <tileset firstgid="72" name="goal" tilewidth="64" tileheight="64" tilecount="1">
   <image source="../images/goal.png" width="96" height="96"/>
  </tileset>
- <tileset firstgid="69" name="coin" tilewidth="32" tileheight="32" tilecount="5">
+ <tileset firstgid="73" name="coin" tilewidth="32" tileheight="32" tilecount="5">
   <image source="../images/coin.png" width="160" height="32"/>
  </tileset>
- <tileset firstgid="74" name="spikes" tilewidth="32" tileheight="32" tilecount="2">
+ <tileset firstgid="78" name="spikes" tilewidth="32" tileheight="32" tilecount="2">
   <image source="../images/spikes.png" width="64" height="32"/>
  </tileset>
- <tileset firstgid="76" name="shooter" tilewidth="32" tileheight="32" tilecount="1">
-  <image source="../images/shooter.png" width="32" height="32"/>
+ <tileset firstgid="80" name="shooter" tilewidth="32" tileheight="32" tilecount="4">
+  <image source="../images/shooter.png" width="128" height="32"/>
  </tileset>
- <tileset firstgid="77" name="memory" tilewidth="32" tileheight="32" tilecount="5">
-  <image source="../images/memory.png" width="160" height="32"/>
+ <tileset firstgid="84" name="memory" tilewidth="32" tileheight="32" tilecount="4">
+  <image source="../images/memory.png" width="128" height="32"/>
  </tileset>
  <layer name="foreground" width="80" height="20">
   <data>
@@ -3234,90 +3237,90 @@
  </layer>
  <objectgroup name="characters">
   <object id="1" name="player" type="player" gid="56" x="32" y="288" width="64" height="64"/>
-  <object id="9" name="goal" type="goal" gid="68" x="2464" y="448" width="64" height="64"/>
+  <object id="9" name="goal" type="goal" gid="72" x="2464" y="448" width="64" height="64"/>
   <object id="136" type="enemy" gid="55" x="2080" y="448" width="32" height="32"/>
   <object id="137" type="enemy" gid="55" x="2400" y="448" width="32" height="32"/>
  </objectgroup>
  <objectgroup name="coins">
-  <object id="65" gid="69" x="321" y="480" width="32" height="32"/>
-  <object id="66" gid="69" x="353" y="480" width="32" height="32"/>
-  <object id="67" gid="69" x="384" y="480" width="32" height="32"/>
-  <object id="69" gid="69" x="705" y="480" width="32" height="32"/>
-  <object id="70" gid="69" x="736" y="448" width="32" height="32"/>
-  <object id="71" gid="69" x="768" y="416" width="32" height="32"/>
-  <object id="72" gid="69" x="800" y="416" width="32" height="32"/>
-  <object id="104" gid="69" x="1088" y="416" width="32" height="32"/>
-  <object id="105" gid="69" x="1120" y="384" width="32" height="32"/>
-  <object id="106" gid="69" x="1152" y="352" width="32" height="32"/>
-  <object id="107" gid="69" x="1184" y="352" width="32" height="32"/>
-  <object id="108" gid="69" x="832" y="448" width="32" height="32"/>
-  <object id="109" gid="69" x="864" y="480" width="32" height="32"/>
-  <object id="111" gid="69" x="1376" y="352" width="32" height="32"/>
-  <object id="112" gid="69" x="1408" y="384" width="32" height="32"/>
-  <object id="113" gid="69" x="1440" y="416" width="32" height="32"/>
-  <object id="114" gid="69" x="1472" y="448" width="32" height="32"/>
-  <object id="115" gid="69" x="1472" y="480" width="32" height="32"/>
-  <object id="119" gid="69" x="1600" y="416" width="32" height="32"/>
-  <object id="120" gid="69" x="1632" y="416" width="32" height="32"/>
-  <object id="125" gid="69" x="1760" y="480" width="32" height="32"/>
-  <object id="126" gid="69" x="1792" y="448" width="32" height="32"/>
-  <object id="127" gid="69" x="1824" y="416" width="32" height="32"/>
-  <object id="128" gid="69" x="1856" y="416" width="32" height="32"/>
-  <object id="129" gid="69" x="1984" y="448" width="32" height="32"/>
-  <object id="130" gid="69" x="2144" y="448" width="32" height="32"/>
-  <object id="131" gid="69" x="2304" y="448" width="32" height="32"/>
+  <object id="65" gid="73" x="321" y="480" width="32" height="32"/>
+  <object id="66" gid="73" x="353" y="480" width="32" height="32"/>
+  <object id="67" gid="73" x="384" y="480" width="32" height="32"/>
+  <object id="69" gid="73" x="705" y="480" width="32" height="32"/>
+  <object id="70" gid="73" x="736" y="448" width="32" height="32"/>
+  <object id="71" gid="73" x="768" y="416" width="32" height="32"/>
+  <object id="72" gid="73" x="800" y="416" width="32" height="32"/>
+  <object id="104" gid="73" x="1088" y="416" width="32" height="32"/>
+  <object id="105" gid="73" x="1120" y="384" width="32" height="32"/>
+  <object id="106" gid="73" x="1152" y="352" width="32" height="32"/>
+  <object id="107" gid="73" x="1184" y="352" width="32" height="32"/>
+  <object id="108" gid="73" x="832" y="448" width="32" height="32"/>
+  <object id="109" gid="73" x="864" y="480" width="32" height="32"/>
+  <object id="111" gid="73" x="1376" y="352" width="32" height="32"/>
+  <object id="112" gid="73" x="1408" y="384" width="32" height="32"/>
+  <object id="113" gid="73" x="1440" y="416" width="32" height="32"/>
+  <object id="114" gid="73" x="1472" y="448" width="32" height="32"/>
+  <object id="115" gid="73" x="1472" y="480" width="32" height="32"/>
+  <object id="119" gid="73" x="1600" y="416" width="32" height="32"/>
+  <object id="120" gid="73" x="1632" y="416" width="32" height="32"/>
+  <object id="125" gid="73" x="1760" y="480" width="32" height="32"/>
+  <object id="126" gid="73" x="1792" y="448" width="32" height="32"/>
+  <object id="127" gid="73" x="1824" y="416" width="32" height="32"/>
+  <object id="128" gid="73" x="1856" y="416" width="32" height="32"/>
+  <object id="129" gid="73" x="1984" y="448" width="32" height="32"/>
+  <object id="130" gid="73" x="2144" y="448" width="32" height="32"/>
+  <object id="131" gid="73" x="2304" y="448" width="32" height="32"/>
  </objectgroup>
  <objectgroup name="spikes">
-  <object id="87" gid="74" x="1376" y="640" width="32" height="32"/>
-  <object id="88" gid="74" x="1408" y="640" width="32" height="32"/>
-  <object id="89" gid="74" x="1440" y="640" width="32" height="32"/>
-  <object id="90" gid="74" x="1472" y="640" width="32" height="32"/>
-  <object id="91" gid="74" x="1504" y="640" width="32" height="32"/>
-  <object id="92" gid="74" x="1536" y="640" width="32" height="32"/>
-  <object id="93" gid="74" x="1568" y="640" width="32" height="32"/>
-  <object id="94" gid="74" x="1600" y="640" width="32" height="32"/>
-  <object id="95" gid="74" x="1600" y="640" width="32" height="32"/>
-  <object id="96" gid="74" x="1632" y="640" width="32" height="32"/>
-  <object id="97" gid="74" x="1664" y="640" width="32" height="32"/>
-  <object id="98" gid="74" x="1696" y="640" width="32" height="32"/>
-  <object id="99" gid="74" x="1728" y="640" width="32" height="32"/>
-  <object id="100" gid="74" x="1760" y="640" width="32" height="32"/>
-  <object id="101" gid="74" x="1792" y="640" width="32" height="32"/>
-  <object id="102" gid="74" x="1824" y="640" width="32" height="32"/>
-  <object id="103" gid="74" x="1856" y="640" width="32" height="32"/>
-  <object id="138" gid="74" x="2016" y="448" width="32" height="32"/>
-  <object id="139" gid="74" x="2048" y="448" width="32" height="32"/>
-  <object id="140" gid="74" x="2080" y="448" width="32" height="32"/>
-  <object id="141" gid="74" x="2112" y="448" width="32" height="32"/>
-  <object id="142" gid="74" x="2176" y="448" width="32" height="32"/>
-  <object id="143" gid="74" x="2208" y="448" width="32" height="32"/>
-  <object id="144" gid="74" x="2240" y="448" width="32" height="32"/>
-  <object id="145" gid="74" x="2272" y="448" width="32" height="32"/>
+  <object id="87" gid="78" x="1376" y="640" width="32" height="32"/>
+  <object id="88" gid="78" x="1408" y="640" width="32" height="32"/>
+  <object id="89" gid="78" x="1440" y="640" width="32" height="32"/>
+  <object id="90" gid="78" x="1472" y="640" width="32" height="32"/>
+  <object id="91" gid="78" x="1504" y="640" width="32" height="32"/>
+  <object id="92" gid="78" x="1536" y="640" width="32" height="32"/>
+  <object id="93" gid="78" x="1568" y="640" width="32" height="32"/>
+  <object id="94" gid="78" x="1600" y="640" width="32" height="32"/>
+  <object id="95" gid="78" x="1600" y="640" width="32" height="32"/>
+  <object id="96" gid="78" x="1632" y="640" width="32" height="32"/>
+  <object id="97" gid="78" x="1664" y="640" width="32" height="32"/>
+  <object id="98" gid="78" x="1696" y="640" width="32" height="32"/>
+  <object id="99" gid="78" x="1728" y="640" width="32" height="32"/>
+  <object id="100" gid="78" x="1760" y="640" width="32" height="32"/>
+  <object id="101" gid="78" x="1792" y="640" width="32" height="32"/>
+  <object id="102" gid="78" x="1824" y="640" width="32" height="32"/>
+  <object id="103" gid="78" x="1856" y="640" width="32" height="32"/>
+  <object id="138" gid="78" x="2016" y="448" width="32" height="32"/>
+  <object id="139" gid="78" x="2048" y="448" width="32" height="32"/>
+  <object id="140" gid="78" x="2080" y="448" width="32" height="32"/>
+  <object id="141" gid="78" x="2112" y="448" width="32" height="32"/>
+  <object id="142" gid="78" x="2176" y="448" width="32" height="32"/>
+  <object id="143" gid="78" x="2208" y="448" width="32" height="32"/>
+  <object id="144" gid="78" x="2240" y="448" width="32" height="32"/>
+  <object id="145" gid="78" x="2272" y="448" width="32" height="32"/>
  </objectgroup>
  <objectgroup name="shooters"/>
  <objectgroup name="memories">
-  <object id="152" gid="77" x="32" y="480" width="32" height="32">
+  <object id="152" gid="84" x="32" y="480" width="32" height="32">
    <properties>
     <property name="dialogue" value="move"/>
    </properties>
   </object>
-  <object id="153" gid="77" x="576" y="480" width="32" height="32">
+  <object id="153" gid="84" x="576" y="480" width="32" height="32">
    <properties>
     <property name="dialogue" value="jump"/>
    </properties>
   </object>
-  <object id="154" gid="77" x="1152" y="448" width="32" height="32" visible="0">
+  <object id="154" gid="84" x="1152" y="448" width="32" height="32" visible="0">
    <properties>
     <property name="dialogue" value="move-jump"/>
    </properties>
   </object>
-  <object id="155" gid="77" x="1248" y="384" width="32" height="32">
+  <object id="155" gid="84" x="1248" y="384" width="32" height="32">
    <properties>
     <property name="condition" value="move-jump"/>
     <property name="dialogue" value="move-jump-2"/>
    </properties>
   </object>
-  <object id="156" gid="77" x="1920" y="448" width="32" height="32">
+  <object id="156" gid="84" x="1920" y="448" width="32" height="32">
    <properties>
     <property name="dialogue" value="slimes"/>
    </properties>
