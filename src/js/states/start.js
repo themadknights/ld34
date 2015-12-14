@@ -104,7 +104,15 @@ export class StartState extends Phaser.State {
             enemy.kill();
         });
 
-        this.game.physics.arcade.collide(this.projectiles, this.map.platforms);
+        this.game.physics.arcade.collide(this.projectiles, this.map.platforms, function (projectile) {
+            if (projectile.body.blocked.down) {
+                if (projectile.body.velocity.x > 0) {
+                    projectile.angle += 5;
+                } else {
+                    projectile.angle += -5;
+                }
+            }
+        });
 
         this.game.physics.arcade.collide(this.player.spells['XZ'].shield, this.projectiles, function(shield, projectile) {
             projectile.kill();
