@@ -107,7 +107,7 @@ export class Player extends Phaser.Sprite {
                 this.invulnerable = false;
                 this.alpha = 1;
                 if (this.health <= 0) {
-                    this.kill();
+                    this.gameState.restart();
                 }
             }, this);
             timer.start();
@@ -120,15 +120,18 @@ export class Player extends Phaser.Sprite {
         this.play("idle");
     }
 
-    kill() {
-        super.kill();
-        this.gameState.restart();
-    }
-
     collect(coin) {
         this.gameState.score += coin.value;
         this.gameState.updateScoreHud();
         coin.kill();
+    }
+
+    respawn(position) {
+        this.stop();
+        this.health = this.maxHealth;
+        this.gameState.updateHealthHud();
+        this.position.x = position.x;
+        this.position.y = position.y;
     }
 
 }
