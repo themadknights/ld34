@@ -200,6 +200,7 @@ export class StartState extends Phaser.State {
 
     levelComplete(nextLevel) {
         if (!this.levelCompleted) {
+            this.player.invulnerable = true;
             this.levelCompleted = true;
             this.player.stop();
             this.levelCompleteTween = this.game.add.tween(this.levelCompleteOverlay).to({
