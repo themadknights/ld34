@@ -3,6 +3,7 @@ import { Coin } from 'sprites/coin';
 import { Spike } from 'sprites/spike';
 import { Shooter } from 'sprites/shooter';
 import { MobilePlatform } from 'sprites/mobile_platform';
+import { Memory } from 'sprites/memory';
 
 export class Map extends Phaser.Tilemap {
     constructor(state, level) {
@@ -29,6 +30,7 @@ export class Map extends Phaser.Tilemap {
         this.loadSpikes();
         this.loadShooters();
         this.loadMobilePlatforms();
+        this.loadMemories();
 
         this.gameState.game.sound.stopAll();
         this.audio.play();
@@ -82,6 +84,14 @@ export class Map extends Phaser.Tilemap {
         if (this.objects && this.objects.platforms) {
             for(let platform of this.objects.platforms) {
                 this.gameState.mobilePlatforms.add(new MobilePlatform(this.gameState, platform));
+            }
+        }
+    }
+
+    loadMemories() {
+        if (this.objects && this.objects.memories) {
+            for(let memory of this.objects.memories) {
+                this.gameState.memories.add(new Memory(this.gameState, memory));
             }
         }
     }

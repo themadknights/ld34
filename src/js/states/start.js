@@ -34,6 +34,9 @@ export class StartState extends Phaser.State {
         // Create coins
         this.coins = this.game.add.group();
 
+        // Create memories
+        this.memories = this.game.add.group();
+
         // Create spikes
         this.spikes = this.game.add.group();
 
@@ -106,6 +109,13 @@ export class StartState extends Phaser.State {
 
         this.physics.arcade.overlap(this.player, this.coins, (player, coin) => {
             this.player.collect(coin);
+        });
+
+        this.physics.arcade.overlap(this.player, this.memories, (player, memory) => {
+            if (memory.dialogueId) {
+                console.log(`Start dialogue ${memory.dialogueId}`);
+            }
+            memory.kill();
         });
 
         this.physics.arcade.overlap(this.player, this.spikes, (player, spike) => {

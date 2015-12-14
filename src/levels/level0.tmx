@@ -3295,7 +3295,7 @@
   <object id="145" gid="74" x="2272" y="448" width="32" height="32"/>
  </objectgroup>
  <objectgroup name="shooters"/>
- <objectgroup name="memory">
+ <objectgroup name="memories">
   <object id="152" gid="77" x="32" y="480" width="32" height="32">
    <properties>
     <property name="dialogue" value="move"/>

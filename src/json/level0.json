@@ -969,7 +969,7 @@
         {
          "draworder":"topdown",
          "height":20,
-         "name":"memory",
+         "name":"memories",
          "objects":[
                 {
                  "gid":77,
