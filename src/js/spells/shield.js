@@ -8,7 +8,7 @@ export class ShieldSpell extends Spell {
     constructor(combination, user) {
         super(combination, 'shield', user, 'shieldFx');
         this.duration = 1;
-        this.shield = this.user.addChild(this.user.game.make.sprite(40, 0, 'shield'));
+        this.shield = this.user.addChild(this.user.game.make.sprite(30, 0, 'shield'));
         this.shield.anchor.setTo(0.5);
         this.user.game.physics.arcade.enable(this.shield);
         this.shield.body.allowGravity = false;

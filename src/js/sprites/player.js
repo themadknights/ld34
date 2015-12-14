@@ -59,10 +59,6 @@ export class Player extends Phaser.Sprite {
     }
 
     cast() {
-        if (this.currentSpell) {
-            this.currentSpell.cancel();
-        }
-
         if (this.spells[this.spell]) {
             this.currentSpell = this.spells[this.spell];
             this.spellName.text = `${this.currentSpell.name}!`;
