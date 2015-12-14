@@ -1,8 +1,12 @@
 import { Spell } from 'spells/base';
 
 export class StopSpell extends Spell {
-    constructor(user) {
-        super(user);
+    static combination () {
+        return 'ZX';
+    }
+
+    constructor(combination, user) {
+        super(combination, 'stop', user);
     }
 
     castAction() {

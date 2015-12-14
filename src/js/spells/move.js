@@ -1,8 +1,12 @@
 import { Spell } from 'spells/base';
 
 export class MoveSpell extends Spell {
-    constructor(user) {
-        super(user);
+    static combination () {
+        return 'Z';
+    }
+
+    constructor(combination, user) {
+        super(combination, 'move', user);
     }
 
     castAction() {

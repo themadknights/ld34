@@ -19,7 +19,8 @@ module.exports = {
         ],
         templates: `${sourceFolder}/templates/**/*.html`,
         libs: [
-            'node_modules/phaser/dist/phaser.js'
+            'node_modules/phaser/dist/phaser.min.js',
+            'node_modules/jquery/dist/jquery.min.js'
         ],
         styles: `${sourceFolder}/styles/**/*.css`,
         images: `${sourceFolder}/images/**/*.*`,

@@ -1,8 +1,12 @@
 import { Spell } from 'spells/base';
 
 export class MuteSpell extends Spell {
-    constructor(user) {
-        super(user);
+    static combination () {
+        return 'ZZZXXX';
+    }
+
+    constructor(combination, user) {
+        super(combination, 'mute', user);
     }
 
     castAction() {

@@ -1,8 +1,12 @@
 import { Spell } from 'spells/base';
 
 export class FireballSpell extends Spell {
-    constructor(user) {
-        super(user, 'fireballFx');
+    static combination () {
+        return 'ZXXZ';
+    }
+
+    constructor(combination, user) {
+        super(combination, 'fireball', user, 'fireballFx');
     }
 
     castAction() {

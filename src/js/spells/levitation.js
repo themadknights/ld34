@@ -1,8 +1,12 @@
 import { Spell } from 'spells/base';
 
 export class LevitationSpell extends Spell {
-    constructor(user) {
-        super(user, 'levitateFx');
+    static combination () {
+        return 'ZZ';
+    }
+
+    constructor(combination, user) {
+        super(combination, 'levitation', user, 'levitateFx');
         this.duration = 2;
     }
 

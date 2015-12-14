@@ -1,8 +1,12 @@
 import { Spell } from 'spells/base';
 
 export class JumpSpell extends Spell {
-    constructor(user) {
-        super(user, 'jumpFx');
+    static combination () {
+        return 'X';
+    }
+
+    constructor(combination, user) {
+        super(combination, 'jump', user, 'jumpFx');
     }
 
     castAction() {

@@ -10,15 +10,14 @@ export class Player extends Phaser.Sprite {
     constructor(state, x, y) {
         super(state.game, x, y, 'player');
 
-        this.spells = {
-            "Z": new MoveSpell(this),
-            "ZX": new StopSpell(this),
-            "X": new JumpSpell(this),
-            "ZXXZ": new FireballSpell(this),
-            "XZ": new ShieldSpell(this),
-            "ZZ": new LevitationSpell(this),
-            "ZZZXXX": new MuteSpell(this)
-        };
+        this.spells = {};
+        this.spells[MoveSpell.combination()] = new MoveSpell(MoveSpell.combination(), this);
+        this.spells[JumpSpell.combination()] = new JumpSpell(JumpSpell.combination(), this);
+        this.spells[StopSpell.combination()] = new StopSpell(StopSpell.combination(), this);
+        this.spells[ShieldSpell.combination()] = new ShieldSpell(ShieldSpell.combination(), this);
+        this.spells[FireballSpell.combination()] = new FireballSpell(FireballSpell.combination(), this);
+        this.spells[LevitationSpell.combination()] = new LevitationSpell(LevitationSpell.combination(), this);
+        this.spells[MuteSpell.combination()] = new MuteSpell(MuteSpell.combination(), this);
 
         this.gameState = state;
         this.anchor.setTo(0.5);
