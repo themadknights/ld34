@@ -23,7 +23,7 @@ export class MenuState extends Phaser.State {
         this.zKey.onDown.add(function() {
             this.mage.play('cast');
             this.castingBarAnimation.onComplete.add(function() {
-                this.game.state.start('start');
+                this.game.state.start('start', true, false, 'level0', 0);
             }, this);
             this.castBar.play('casting');
         }, this);

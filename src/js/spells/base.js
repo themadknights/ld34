@@ -43,9 +43,9 @@ export class Spell {
     }
 
     reveal () {
-        let templateCombination = $(`ul#spellslist li.${this.name} .combination .key`);
+        let templateCombination = jQuery(`ul#spellslist li.${this.name} .combination .key`);
         templateCombination.each((index, key) => {
-            $(key).addClass(this.combination[index]);
+            jQuery(key).addClass(this.combination[index]);
         });
     }
 }

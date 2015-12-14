@@ -25,8 +25,8 @@ export class StartState extends Phaser.State {
         this.showDebug = false;
         // @endif
 
-        this.levelId = levelId || 'goalTest';
-        this.score = score || 0;
+        this.levelId = levelId;
+        this.score = score;
     }
 
     create() {

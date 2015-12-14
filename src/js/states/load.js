@@ -50,13 +50,13 @@ export class LoadState extends Phaser.State {
 
     create () {
         let defaultScene = 'start',
-            defaultLevel = 'goalTest';
+            defaultLevel = 'level0';
 
         // @if NODE_ENV='production'
         defaultScene = 'publisher';
         defaultLevel = 'level0';
         // @endif
 
-        this.game.state.start(defaultScene, true, false, defaultLevel);
+        this.game.state.start(defaultScene, true, false, defaultLevel, 0);
     }
 }
