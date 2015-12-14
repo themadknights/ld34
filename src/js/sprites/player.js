@@ -98,6 +98,11 @@ export class Player extends Phaser.Sprite {
         }
     }
 
+    stop() {
+        this.body.velocity.setTo(0);
+        this.play("idle");
+    }
+
     kill() {
         super.kill();
         this.gameState.restart();

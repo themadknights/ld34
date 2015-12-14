@@ -19,12 +19,11 @@ export class StartState extends Phaser.State {
         this.debugKey.onDown.add(this.toggleDebug, this);
         // @endif
 
-        this.showDebug = true;
+        this.showDebug = false;
+
         // @if NODE_ENV = 'production'
         this.showDebug = false;
         // @endif
-
-        console.log(arguments);
 
         this.levelId = levelId || 'goalTest';
         this.score = score || 0;
@@ -184,6 +183,14 @@ export class StartState extends Phaser.State {
 
         this.updateHealthHud();
 
+        this.levelCompleteOverlay = this.game.add.image(0, 0, 'levelCompleteOverlay');
+        this.levelCompleteOverlay.alpha = 0;
+        this.levelCompleteOverlay.fixedToCamera = true;
+        this.levelCompleteText = this.game.add.bitmapText(400, 300, 'carrier_command', "Level complete!", 16);
+        this.levelCompleteText.anchor.setTo(0.5);
+        this.levelCompleteText.fixedToCamera = true;
+        this.levelCompleteText.visible = false;
+
         this.dialogue = new Dialogue(this);
     }
 
@@ -192,10 +199,25 @@ export class StartState extends Phaser.State {
     }
 
     levelComplete(nextLevel) {
-        if(nextLevel) {
-            this.game.state.start('start', true, false, nextLevel, this.score);
-        } else {
-            this.game.state.start('thanks', true, false, this.score);
+        if (!this.levelCompleted) {
+            this.levelCompleted = true;
+            this.player.stop();
+            this.levelCompleteTween = this.game.add.tween(this.levelCompleteOverlay).to({
+                alpha: 0.7
+            },  Phaser.Timer.HALF, "Linear", true);
+            this.levelCompleteTween.onComplete.add(() => {
+                this.levelCompleteText.visible = true;
+                let timer = this.game.time.create(this.game, true);
+                timer.add(Phaser.Timer.SECOND, function() {
+                    if(nextLevel) {
+                        this.game.state.start('start', true, false, nextLevel, this.score);
+                    } else {
+                        this.game.state.start('thanks', true, false, this.score);
+                    }
+                }, this);
+                timer.start();
+            });
+            this.levelCompleteTween.start();
         }
     }
 

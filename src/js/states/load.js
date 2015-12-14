@@ -27,6 +27,7 @@ export class LoadState extends Phaser.State {
         this.load.image('hudDialogue', 'images/hud_dialogue.png');
         this.load.image('mageAvatar', 'images/mage_avatar.png');
         this.load.image('memoryAvatar', 'images/memory_avatar.png');
+        this.load.image('levelCompleteOverlay', 'images/level_complete_overlay.png');
         this.load.tilemap('level0', 'json/level0.json', null, Phaser.Tilemap.TILED_JSON);
         this.load.tilemap('level1', 'json/level1.json', null, Phaser.Tilemap.TILED_JSON);
         this.load.tilemap('level2', 'json/level2.json', null, Phaser.Tilemap.TILED_JSON);
