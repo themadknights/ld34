@@ -1,24 +1,35 @@
 {
   "level0": {
-    "move": [
-        { "avatar": "mage", "text": "mmm...what's this?"},
-        { "avatar": "memory", "text": "Luke.. I'm your father!\n\nuhh I mean, I'm your memory"},
-        { "avatar": "mage", "text": "My what?"},
-        { "avatar": "memory", "text": "Dude, I'm just a fragment of\n\nyour memories."},
-        { "avatar": "mage", "text": "Well, ok."},
-        { "avatar": "memory", "text": "Ok?? You don't even remember\n\nhow to move!"},
-        { "avatar": "mage", "text": "..."},
-        { "avatar": "memory", "text": "Come on, let's go! Use the Z button\n\nto cast a 'Move' spell"}
-    ],
-    "jump": [
-        { "avatar": "mage", "text": "placeholder" }
-    ],
-    "move-jump": [
-        { "avatar": "mage", "text": "placeholder" }
-    ],
-    "slimes": [
-        { "avatar": "mage", "text": "placeholder" }
-    ]
+      "move": [
+          { "avatar": "mage", "text": "mmm...what's this?", "position": "left"},
+          { "avatar": "memory", "text": "Luke.. I'm your father!\n\nuhh I mean, I'm your memory", "position": "right"},
+          { "avatar": "mage", "text": "My what?", "position": "left"},
+          { "avatar": "memory", "text": "Dude, I'm just a fragment of\n\nyour memories.", "position": "right"},
+          { "avatar": "mage", "text": "Well, ok.", "position": "left"},
+          { "avatar": "memory", "text": "Ok?? You don't even remember\n\nhow to move!", "position": "right"},
+          { "avatar": "mage", "text": "...", "position": "left"},
+          { "avatar": "memory", "text": "Come on, let's go! Use the Z button\n\nto cast a 'Move' spell", "position": "right"}
+      ],
+      "jump": [
+          { "avatar": "memory", "text": "placeholder", "position": "right" },
+          { "avatar": "mage", "text": "placeholder", "position": "left" }
+      ],
+      "move-jump": [
+          { "avatar": "mage", "text": "placeholder", "position": "left" }
+      ],
+      "move-jump-2": {
+          "move-jump": [
+              { "avatar": "memory", "text": "You picked it", "position": "right" },
+              { "avatar": "mage", "text": "placeholder", "position": "left" }
+          ],
+          "!move-jump": [
+              { "avatar": "memory", "text": "You didnt picked it", "position": "right" },
+              { "avatar": "mage", "text": "placeholder", "position": "left" }
+          ]
+      },
+      "slimes": [
+          { "avatar": "mage", "text": "placeholder", "position": "left" }
+      ]
   },
   "level1": {
       "stop": [

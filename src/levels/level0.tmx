@@ -3306,14 +3306,15 @@
     <property name="dialogue" value="jump"/>
    </properties>
   </object>
-  <object id="154" gid="77" x="1152" y="448" width="32" height="32">
+  <object id="154" gid="77" x="1152" y="448" width="32" height="32" visible="0">
    <properties>
     <property name="dialogue" value="move-jump"/>
    </properties>
   </object>
   <object id="155" gid="77" x="1248" y="384" width="32" height="32">
    <properties>
-    <property name="dialogue" value="move-jump"/>
+    <property name="condition" value="move-jump"/>
+    <property name="dialogue" value="move-jump-2"/>
    </properties>
   </object>
   <object id="156" gid="77" x="1920" y="448" width="32" height="32">

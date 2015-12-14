@@ -5,9 +5,13 @@ export class Memory extends Phaser.Sprite {
         this.anchor.setTo(0.5);
         this.game.add.existing(this);
         this.game.physics.arcade.enable(this);
+        if (!data.visible) {
+            this.alpha = 0;
+        }
 
         if (data.properties) {
             this.dialogueId = data.properties.dialogue;
+            this.condition = data.properties.condition;
         }
 
         this.animations.add("spin", [0,1,2,3,4,3,2,1], 8, true);
