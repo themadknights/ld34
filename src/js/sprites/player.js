@@ -5,6 +5,7 @@ import { FireballSpell } from 'spells/fireball';
 import { ShieldSpell } from 'spells/shield';
 import { LevitationSpell } from 'spells/levitation';
 import { MuteSpell } from 'spells/mute';
+import { PortalSpell } from 'spells/portal';
 
 export class Player extends Phaser.Sprite {
     constructor(state, x, y) {
@@ -20,6 +21,7 @@ export class Player extends Phaser.Sprite {
         this.spells[FireballSpell.combination()] = new FireballSpell(FireballSpell.combination(), this);
         this.spells[LevitationSpell.combination()] = new LevitationSpell(LevitationSpell.combination(), this);
         this.spells[MuteSpell.combination()] = new MuteSpell(MuteSpell.combination(), this);
+        this.spells[PortalSpell.combination()] = new PortalSpell(PortalSpell.combination(), this);
 
         this.gameState = state;
         this.anchor.setTo(0.5);

@@ -27,6 +27,8 @@ export class StartState extends Phaser.State {
 
         this.levelId = levelId;
         this.score = score;
+
+        this.levelCompleted = false;
     }
 
     create() {
