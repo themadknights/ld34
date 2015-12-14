@@ -29,7 +29,7 @@ export class StartState extends Phaser.State {
         this.physics.arcade.gravity.y = 300;
 
         // Create map
-        this.map = new Map(this, 'platformTest');
+        this.map = new Map(this, 'collisionTest');
 
         // Create coins
         this.coins = this.game.add.group();
