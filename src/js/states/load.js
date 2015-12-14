@@ -6,7 +6,7 @@ export class LoadState extends Phaser.State {
     preload() {
         this.loadingText = this.game.add.bitmapText(this.game.world.centerX, this.game.world.centerY, 'carrier_command', "Loading...", 18);
         this.loadingText.anchor.setTo(0.5);
-        this.load.spritesheet('player', 'images/player.png', 64, 64, 12);
+        this.load.spritesheet('player', 'images/player.png', 64, 64, 16);
         this.load.spritesheet('castbar', 'images/castbar.png', 5, 1, 6);
         this.load.spritesheet('healthIcons', 'images/health_icons.png', 16, 16, 2);
         this.load.spritesheet('spikes', 'images/spikes.png', 32, 32, 2);
