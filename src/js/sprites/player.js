@@ -43,6 +43,8 @@ export class Player extends Phaser.Sprite {
         this.castBar = this.addChild(this.game.make.sprite(0, -40, 'castbar'));
         this.castBar.anchor.setTo(0.5);
         this.castBar.scale.setTo(12, 4);
+        this.spellName = this.addChild(this.game.make.bitmapText(0, -60, 'carrier_command', '', 16));
+        this.spellName.alpha = 0;
         let animation = this.castBar.animations.add('casting', [0, 1, 2, 3, 4, 5, 0], 75, false);
         animation.onComplete.add(function() {
             this.currentSpell.cast();
@@ -60,6 +62,11 @@ export class Player extends Phaser.Sprite {
 
         if (this.spells[this.spell]) {
             this.currentSpell = this.spells[this.spell];
+            this.spellName.text = `${this.currentSpell.name}!`;
+            this.spellName.alpha = 1;
+            this.game.add.tween(this.spellName).to({
+                alpha: 0
+            },  Phaser.Timer.HALF, "Linear", true, 0.5 * Phaser.Timer.HALF);
             this.castBar.play('casting');
         }
     }

@@ -85,7 +85,11 @@ export class StartState extends Phaser.State {
 
     update() {
         if(!this.player.mustJump) {
-            this.game.physics.arcade.collide(this.player, this.map.platforms);
+            this.game.physics.arcade.collide(this.player, this.map.platforms, () => {
+                if (this.player.body.blocked.right || this.player.body.blocked.left) {
+                    this.player.play('idle');
+                }
+            });
             this.physics.arcade.collide(this.player, this.mobilePlatforms);
         }
         this.player.mustJump = false;
