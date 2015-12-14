@@ -31,9 +31,6 @@ export class StartState extends Phaser.State {
         // Create map
         this.map = new Map(this, 'level0');
 
-        // Create player
-        this.player = new Player(this, 0, 0);
-
         // Create coins
         this.coins = this.game.add.group();
 
