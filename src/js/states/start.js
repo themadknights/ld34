@@ -2,6 +2,7 @@ import { pad } from 'utils';
 import { Map } from 'map';
 import { Goal } from 'sprites/goal';
 import { Player } from 'sprites/player';
+import { Dialogue } from 'dialogue';
 
 export class StartState extends Phaser.State {
     constructor() {
@@ -22,6 +23,8 @@ export class StartState extends Phaser.State {
         // @if NODE_ENV = 'production'
         this.showDebug = false;
         // @endif
+
+        this.levelId = 'level0';
     }
 
     create() {
@@ -29,7 +32,7 @@ export class StartState extends Phaser.State {
         this.physics.arcade.gravity.y = 300;
 
         // Create map
-        this.map = new Map(this, 'level0');
+        this.map = new Map(this, this.levelId);
 
         // Create coins
         this.coins = this.game.add.group();
@@ -113,7 +116,7 @@ export class StartState extends Phaser.State {
 
         this.physics.arcade.overlap(this.player, this.memories, (player, memory) => {
             if (memory.dialogueId) {
-                console.log(`Start dialogue ${memory.dialogueId}`);
+                this.dialogue.start(memory.dialogueId);
             }
             memory.kill();
         });
@@ -178,6 +181,8 @@ export class StartState extends Phaser.State {
         this.hudKeys = this.game.add.group();
 
         this.updateHealthHud();
+
+        this.dialogue = new Dialogue(this);
     }
 
     gameOver() {

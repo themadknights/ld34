@@ -24,6 +24,9 @@ export class LoadState extends Phaser.State {
         this.load.image('goal', 'images/goal.png');
         this.load.image('tileset', 'images/tileset.png');
         this.load.image('hudBg', 'images/hud_background.png');
+        this.load.image('hudDialogue', 'images/hud_dialogue.png');
+        this.load.image('mageAvatar', 'images/mage_avatar.png');
+        this.load.image('memoryAvatar', 'images/memory_avatar.png');
         this.load.tilemap('level0', 'json/level0.json', null, Phaser.Tilemap.TILED_JSON);
         this.load.tilemap('level1', 'json/level1.json', null, Phaser.Tilemap.TILED_JSON);
         this.load.tilemap('shooterTest', 'json/shooterTest.json', null, Phaser.Tilemap.TILED_JSON);
@@ -37,6 +40,7 @@ export class LoadState extends Phaser.State {
         this.load.audio('shieldFx', 'sounds/shield.wav');
         this.load.audio('levitateFx', 'sounds/levitate.wav');
         this.load.audio('music0', 'sounds/music0.ogg');
+        this.load.json('dialogues', 'json/dialogues.json');
     }
 
     create () {

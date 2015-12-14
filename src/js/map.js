@@ -19,7 +19,6 @@ export class Map extends Phaser.Tilemap {
 
         this.background = this.createLayer('background');
 
-
         //TODO: Take audio from tiled
         this.audio = state.game.add.audio('music0', 0.05, true);
     }

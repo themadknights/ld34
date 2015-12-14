@@ -14,6 +14,7 @@ module.exports = {
             `${sourceFolder}/js/spells/**/*.js`,
             `${sourceFolder}/js/sprites/**/*.js`,
             `${sourceFolder}/js/map.js`,
+            `${sourceFolder}/js/dialogue.js`,
             `${sourceFolder}/js/states/**/*.js`,
             `${sourceFolder}/js/**/*.js`
         ],
