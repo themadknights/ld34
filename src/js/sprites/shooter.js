@@ -8,7 +8,7 @@ export class Shooter extends Phaser.Sprite {
 
         this.body.allowGravity = false;
 
-        this.shootAnim = this.animations.add("shoot", [0, 1, 2, 3], 4, false);
+        this.shootAnim = this.animations.add("shoot", [0, 1, 2, 3,], 6, false);
 
         if (data.properties) {
             this.ammo = data.properties.ammo || 1;
@@ -45,6 +45,8 @@ export class Shooter extends Phaser.Sprite {
                     this.reloading = false;
                 }, this);
                 timer.start();
+                this.animations.add("recoil", [3, 2, 1, 0,], 6, false);
+                this.play('recoil');
             });
             this.play('shoot');
         }
