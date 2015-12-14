@@ -21,13 +21,13 @@ export class Enemy extends Phaser.Sprite {
         if (this.body.blocked.down) {
             if (this.body.velocity.x > 0) {
                 let rightTile = this.gameState.map.getTileWorldXY(this.body.right, this.body.bottom + 1, 32, 32, this.gameState.mapLayer);
-                if (rightTile && rightTile.index === 1) {
+                if (!rightTile || rightTile.index === 1) {
                     this.body.velocity.x *= -1;
                     this.scale.setTo(1, 1);
                 }
             } else {
                 let leftTile = this.gameState.map.getTileWorldXY(this.body.position.x, this.body.bottom + 1, 32, 32, this.gameState.mapLayer);
-                if (leftTile && leftTile.index === 1) {
+                if (!leftTile || leftTile.index === 1) {
                     this.body.velocity.x *= -1;
                     this.scale.setTo(-1, 1);
                 }

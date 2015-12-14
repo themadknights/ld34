@@ -40,8 +40,8 @@
                  "type":"player",
                  "visible":true,
                  "width":64,
-                 "x":35,
-                 "y":129
+                 "x":32,
+                 "y":288
                 }, 
                 {
                  "gid":68,
@@ -965,8 +965,100 @@
          "width":0,
          "x":0,
          "y":0
+        }, 
+        {
+         "draworder":"topdown",
+         "height":20,
+         "name":"memory",
+         "objects":[
+                {
+                 "gid":77,
+                 "height":32,
+                 "id":152,
+                 "name":"",
+                 "properties":
+                    {
+                     "dialogue":"move"
+                    },
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":32,
+                 "x":32,
+                 "y":480
+                }, 
+                {
+                 "gid":77,
+                 "height":32,
+                 "id":153,
+                 "name":"",
+                 "properties":
+                    {
+                     "dialogue":"jump"
+                    },
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":32,
+                 "x":576,
+                 "y":480
+                }, 
+                {
+                 "gid":77,
+                 "height":32,
+                 "id":154,
+                 "name":"",
+                 "properties":
+                    {
+                     "dialogue":"move-jump"
+                    },
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":32,
+                 "x":1152,
+                 "y":448
+                }, 
+                {
+                 "gid":77,
+                 "height":32,
+                 "id":155,
+                 "name":"",
+                 "properties":
+                    {
+                     "dialogue":"move-jump"
+                    },
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":32,
+                 "x":1248,
+                 "y":384
+                }, 
+                {
+                 "gid":77,
+                 "height":32,
+                 "id":156,
+                 "name":"",
+                 "properties":
+                    {
+                     "dialogue":"slimes"
+                    },
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":32,
+                 "x":1920,
+                 "y":448
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "width":80,
+         "x":0,
+         "y":0
         }],
- "nextobjectid":152,
+ "nextobjectid":157,
  "orientation":"orthogonal",
  "properties":
     {
@@ -1084,6 +1176,22 @@
             },
          "spacing":0,
          "tilecount":1,
+         "tileheight":32,
+         "tilewidth":32
+        }, 
+        {
+         "firstgid":77,
+         "image":"..\/images\/memory.png",
+         "imageheight":32,
+         "imagewidth":160,
+         "margin":0,
+         "name":"memory",
+         "properties":
+            {
+
+            },
+         "spacing":0,
+         "tilecount":5,
          "tileheight":32,
          "tilewidth":32
         }],
