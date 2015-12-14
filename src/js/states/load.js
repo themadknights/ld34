@@ -44,19 +44,20 @@ export class LoadState extends Phaser.State {
         this.load.audio('coinFx', 'sounds/coin.wav');
         this.load.audio('shieldFx', 'sounds/shield.wav');
         this.load.audio('levitateFx', 'sounds/levitate.wav');
+        this.load.audio('portalFx', 'sounds/portal.wav');
         this.load.audio('music0', 'sounds/music0.ogg');
         this.load.json('dialogues', 'json/dialogues.json');
     }
 
     create () {
         let defaultScene = 'start',
-            defaultLevel = 'goalTest';
+            defaultLevel = 'level0';
 
         // @if NODE_ENV='production'
         defaultScene = 'publisher';
         defaultLevel = 'level0';
         // @endif
 
-        this.game.state.start(defaultScene, true, false, defaultLevel);
+        this.game.state.start(defaultScene, true, false, defaultLevel, 0);
     }
 }

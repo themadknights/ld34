@@ -25,8 +25,10 @@ export class StartState extends Phaser.State {
         this.showDebug = false;
         // @endif
 
-        this.levelId = levelId || 'goalTest';
-        this.score = score || 0;
+        this.levelId = levelId;
+        this.score = score;
+
+        this.levelCompleted = false;
     }
 
     create() {
@@ -83,7 +85,11 @@ export class StartState extends Phaser.State {
 
     update() {
         if(!this.player.mustJump) {
-            this.game.physics.arcade.collide(this.player, this.map.platforms);
+            this.game.physics.arcade.collide(this.player, this.map.platforms, () => {
+                if (this.player.body.blocked.right || this.player.body.blocked.left) {
+                    this.player.play('idle');
+                }
+            });
             this.physics.arcade.collide(this.player, this.mobilePlatforms);
         }
         this.player.mustJump = false;
@@ -200,6 +206,7 @@ export class StartState extends Phaser.State {
 
     levelComplete(nextLevel) {
         if (!this.levelCompleted) {
+            this.player.invulnerable = true;
             this.levelCompleted = true;
             this.player.stop();
             this.levelCompleteTween = this.game.add.tween(this.levelCompleteOverlay).to({

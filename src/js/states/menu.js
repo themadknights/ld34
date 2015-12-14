@@ -7,6 +7,9 @@ export class MenuState extends Phaser.State {
         this.logo = this.game.add.image(400, 240, 'logo');
         this.logo.fixedToCamera = true;
         this.logo.anchor.setTo(0.5);
+        this.serial = this.game.add.bitmapText(400, 410, 'carrier_command', 'Serial number: ZXXZXZXZ', 7);
+        this.serial.fixedToCamera = true;
+        this.serial.anchor.setTo(0.5);
 
         //Add 'Tha mage'
         this.mage = this.game.add.sprite(200, 470, 'player');
@@ -23,7 +26,7 @@ export class MenuState extends Phaser.State {
         this.zKey.onDown.add(function() {
             this.mage.play('cast');
             this.castingBarAnimation.onComplete.add(function() {
-                this.game.state.start('start');
+                this.game.state.start('start', true, false, 'level0', 0);
             }, this);
             this.castBar.play('casting');
         }, this);

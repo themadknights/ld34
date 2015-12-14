@@ -16,6 +16,6 @@
   "esnext": true,
   "globals": {
     "Phaser": false,
-    "$": false
+    "jQuery": false
   }
 }

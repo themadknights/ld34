@@ -11,5 +11,6 @@ export class StopSpell extends Spell {
 
     castAction() {
         this.user.body.velocity.x = 0;
+        this.user.play("idle");
     }
 }
