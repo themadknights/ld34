@@ -85,7 +85,12 @@ export class Dialogue {
         }
     }
 
-    setMessage(text) {
+    setMessage(text, position = "left") {
         this.message.text = text;
+        if (position === 'left') {
+            this.message.position.x = 110;
+        } else {
+            this.message.position.x = 30;
+        }
     }
 }
