@@ -9,7 +9,7 @@ export class StartState extends Phaser.State {
         super();
     }
 
-    init() {
+    init(levelId, score) {
         //Starting Physics
         this.physics.startSystem(Phaser.Physics.ARCADE);
 
@@ -24,7 +24,10 @@ export class StartState extends Phaser.State {
         this.showDebug = false;
         // @endif
 
-        this.levelId = 'goalTest';
+        console.log(arguments);
+
+        this.levelId = levelId || 'goalTest';
+        this.score = score || 0;
     }
 
     create() {
@@ -123,7 +126,7 @@ export class StartState extends Phaser.State {
 
         this.physics.arcade.overlap(this.player, this.spikes, (player, spike) => {
             if (player.body.velocity.y > 0 && player.body.bottom !== spike.body.bottom) {
-                this.gameOver();
+                this.restart();
             }
         });
 
@@ -161,7 +164,6 @@ export class StartState extends Phaser.State {
         this.hudBottomBackground.fixedToCamera = true;
         this.hudBottomBackground.alpha = 0.7;
 
-        this.score = 0;
         this.scoreLabel = this.game.add.bitmapText(this.game.width - 10, 10, 'carrier_command', `Score: ${pad(this.score)}`, 12);
         this.scoreLabel.anchor.setTo(1, 0);
         this.scoreLabel.fixedToCamera = true;
@@ -185,13 +187,13 @@ export class StartState extends Phaser.State {
         this.dialogue = new Dialogue(this);
     }
 
-    gameOver() {
-        this.game.state.start('start', true, false, this.score);
+    restart() {
+        this.game.state.start('start', true, false, this.levelId, this.score);
     }
 
     levelComplete(nextLevel) {
         if(nextLevel) {
-            this.game.state.start('start', true, false, this.score);
+            this.game.state.start('start', true, false, nextLevel, this.score);
         } else {
             this.game.state.start('thanks', true, false, this.score);
         }

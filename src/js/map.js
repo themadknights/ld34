@@ -49,6 +49,7 @@ export class Map extends Phaser.Tilemap {
                     case "goal":
                         let goal = this.gameState.goal;
                         goal.position.setTo(character.x + goal.width / 2, character.y - goal.height / 2);
+                        goal.setData(character);
                         break;
                 }
             }

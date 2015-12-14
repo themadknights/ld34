@@ -100,7 +100,7 @@ export class Player extends Phaser.Sprite {
 
     kill() {
         super.kill();
-        this.gameState.gameOver();
+        this.gameState.restart();
     }
 
     collect(coin) {
