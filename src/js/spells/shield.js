@@ -13,6 +13,8 @@ export class ShieldSpell extends Spell {
         this.user.game.physics.arcade.enable(this.shield);
         this.shield.body.allowGravity = false;
         this.shield.body.immovable = true;
+        this.immunityTween = this.user.game.add.tween(this.shield).to({ alpha: 0 }, 0.05 * Phaser.Timer.SECOND, "Linear", true, 0, -1);
+        this.immunityTween.yoyo(true, 0);
         this.shield.kill();
     }
 
