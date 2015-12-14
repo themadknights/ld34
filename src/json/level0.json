@@ -1014,7 +1014,7 @@
                     },
                  "rotation":0,
                  "type":"",
-                 "visible":true,
+                 "visible":false,
                  "width":32,
                  "x":1152,
                  "y":448
@@ -1026,7 +1026,8 @@
                  "name":"",
                  "properties":
                     {
-                     "dialogue":"move-jump"
+                     "condition":"move-jump",
+                     "dialogue":"move-jump-2"
                     },
                  "rotation":0,
                  "type":"",

@@ -24,7 +24,7 @@ export class StartState extends Phaser.State {
         this.showDebug = false;
         // @endif
 
-        this.levelId = 'level1';
+        this.levelId = 'level0';
     }
 
     create() {
@@ -116,7 +116,7 @@ export class StartState extends Phaser.State {
 
         this.physics.arcade.overlap(this.player, this.memories, (player, memory) => {
             if (memory.dialogueId) {
-                this.dialogue.start(memory.dialogueId);
+                this.dialogue.start(memory.dialogueId, memory.condition);
             }
             memory.kill();
         });

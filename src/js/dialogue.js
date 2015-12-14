@@ -3,6 +3,8 @@ export class Dialogue {
         this.gameState = state;
         this.game = state.game;
 
+        this.read = [];
+
         this.data = this.game.cache.getJSON('dialogues');
         this.position = new Phaser.Point(0, this.game.height - 100);
 
@@ -33,9 +35,17 @@ export class Dialogue {
         this.toggleVisibility();
     }
 
-    start(dialogueId) {
+    start(dialogueId, condition) {
+        this.read.push(dialogueId);
         this.game.paused = true;
         this.messages = this.data[this.gameState.levelId][dialogueId];
+        if (condition) {
+            if (this.read.indexOf(condition) !== -1) {
+                this.messages = this.messages[condition];
+            } else {
+                this.messages = this.messages[`!${condition}`];
+            }
+        }
         this.currentMessage = 0;
         this.toggleVisibility();
         this.setCurrentMessage();
