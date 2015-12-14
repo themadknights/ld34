@@ -32,6 +32,8 @@ export class Player extends Phaser.Sprite {
 
         this.animations.add("idle", [0, 1], 2, true);
         this.animations.add("walk", [8,9,10,11], 4, true);
+        this.animations.add("idlecast", [4,5,6,7], 8, true);
+        this.animations.add("walkcast", [12,13,14,15], 8, true);
         this.play("idle");
 
         this.maxHealth = 3;
@@ -48,6 +50,7 @@ export class Player extends Phaser.Sprite {
         let animation = this.castBar.animations.add('casting', [0, 1, 2, 3, 4, 5, 0], 75, false);
         animation.onComplete.add(function() {
             this.currentSpell.cast();
+            this.play('idle');
         }, this);
 
         //Spell
@@ -78,6 +81,11 @@ export class Player extends Phaser.Sprite {
             this.spellTimer.stop();
             this.spell += keyCode;
             this.gameState.updateSpellHud(keyCode);
+            if (this.body.velocity.x > 0) {
+                this.play('walkcast');
+            } else {
+                this.play('idlecast');
+            }
             this.spellTimer.add(0.3 * Phaser.Timer.SECOND, function() {
                 this.cast();
                 this.spell = "";
