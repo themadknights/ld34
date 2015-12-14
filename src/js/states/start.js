@@ -82,11 +82,11 @@ export class StartState extends Phaser.State {
     }
 
     update() {
-        // if(!this.player.mustJump) {
+        if(!this.player.mustJump) {
             this.game.physics.arcade.collide(this.player, this.map.platforms);
             this.physics.arcade.collide(this.player, this.mobilePlatforms);
-        // }
-        // this.player.mustJump = false;
+        }
+        this.player.mustJump = false;
 
         this.game.physics.arcade.collide(this.enemies, this.map.platforms);
 

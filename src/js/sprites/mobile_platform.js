@@ -10,7 +10,7 @@ export class MobilePlatform extends Phaser.Sprite {
         this.body.immovable = true;
         this.body.checkCollision = {
             up: true,
-            bottom: false,
+            down: false,
             left: false,
             right: false
         };
