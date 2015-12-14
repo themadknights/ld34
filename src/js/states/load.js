@@ -44,6 +44,7 @@ export class LoadState extends Phaser.State {
         this.load.audio('coinFx', 'sounds/coin.wav');
         this.load.audio('shieldFx', 'sounds/shield.wav');
         this.load.audio('levitateFx', 'sounds/levitate.wav');
+        this.load.audio('portalFx', 'sounds/portal.wav');
         this.load.audio('music0', 'sounds/music0.ogg');
         this.load.json('dialogues', 'json/dialogues.json');
     }

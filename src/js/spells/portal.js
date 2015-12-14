@@ -6,7 +6,7 @@ export class PortalSpell extends Spell {
     }
 
     constructor(combination, user) {
-        super(combination, 'portal', user);
+        super(combination, 'portal', user, 'portalFx');
     }
 
     castAction() {
