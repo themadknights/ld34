@@ -19,5 +19,14 @@
     "slimes": [
         { "avatar": "mage", "text": "placeholder" }
     ]
+  },
+  "level1": {
+      "stop": [
+          { "avatar": "mage", "text": "placeholder" }
+      ],
+      "shield": [
+          { "avatar": "mage", "text": "placeholder" }
+      ]
   }
+
 }
