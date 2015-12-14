@@ -5,6 +5,7 @@ export class MobilePlatform extends Phaser.Sprite {
         this.anchor.setTo(0.5);
         this.game.add.existing(this);
         this.game.physics.arcade.enable(this);
+
         this.body.allowGravity = false;
         this.body.immovable = true;
         this.body.checkCollision = {
