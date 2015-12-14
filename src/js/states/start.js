@@ -29,7 +29,7 @@ export class StartState extends Phaser.State {
         this.physics.arcade.gravity.y = 300;
 
         // Create map
-        this.map = new Map(this, 'level1');
+        this.map = new Map(this, 'platformTest');
 
         // Create coins
         this.coins = this.game.add.group();
@@ -76,6 +76,7 @@ export class StartState extends Phaser.State {
     update() {
         if(!this.player.mustJump) {
             this.game.physics.arcade.collide(this.player, this.map.platforms);
+            this.physics.arcade.collide(this.player, this.mobilePlatforms);
         }
         this.player.mustJump = false;
 
@@ -120,8 +121,6 @@ export class StartState extends Phaser.State {
         this.physics.arcade.overlap(this.player, this.projectiles, () => {
             this.player.damage(1);
         });
-
-        this.physics.arcade.collide(this.player, this.mobilePlatforms);
     }
 
     render() {
@@ -134,6 +133,8 @@ export class StartState extends Phaser.State {
             this.shooters.forEach((shooter) => this.game.debug.body(shooter));
             this.projectiles.forEach((projectile) => this.game.debug.body(projectile));
             this.coins.forEach((coin) => this.game.debug.body(coin));
+            this.mobilePlatforms.forEach((platform) => this.game.debug.body(platform));
+
             if (this.player.spells['XZ'].shield.alive) {
                 this.game.debug.body(this.player.spells['XZ'].shield);
             }

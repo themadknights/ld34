@@ -7,6 +7,12 @@ export class MobilePlatform extends Phaser.Sprite {
         this.game.physics.arcade.enable(this);
         this.body.allowGravity = false;
         this.body.immovable = true;
+        this.body.checkCollision = {
+            up: true,
+            bottom: false,
+            left: false,
+            right: false
+        };
 
         if (data.properties) {
             this.body.velocity.x = data.properties.speed;
