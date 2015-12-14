@@ -14,17 +14,19 @@ export class Memory extends Phaser.Sprite {
             this.condition = data.properties.condition;
         }
 
-        this.animations.add("spin", [0,1,2,3,4,3,2,1], 8, true);
-        this.play("spin");
-
         this.body.allowGravity = false;
+        this.initialPositionY = this.body.position.y;
+        this.body.velocity.y = -50;
+    }
 
-        this.value = 100;
+    update() {
+        if (this.body.velocity.y < 0 && this.body.position.y <= (this.initialPositionY - 20)) {
+            this.body.velocity.y *= -1;
+        }
 
-        this.fx = this.game.add.audio('coinFx');
-        this.fx.volume = 0.1;
-        this.events.onKilled.add(function() {
-            this.fx.play();
-        }, this);
+        if (this.body.velocity.y > 0 && this.body.position.y >= this.initialPositionY) {
+            this.body.velocity.y *= -1;
+            this.body.position.y = this.initialPositionY;
+        }
     }
 }
