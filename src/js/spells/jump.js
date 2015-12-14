@@ -10,7 +10,7 @@ export class JumpSpell extends Spell {
     }
 
     castAction() {
-        this.user.body.velocity.y = -200;
+        this.user.body.velocity.y = -202;
         this.user.mustJump = true;
     }
 }
