@@ -1,3 +1,36 @@
 body {
   background: #999;
 }
+
+#spellslist {
+  background: #ccc;
+  width: 200px;
+  height: 600px;
+  padding: 20px;
+  box-sizing: border-box;
+  float: right;
+}
+
+#spellslist li {
+  margin-bottom: 15px;
+}
+
+.combination {
+  width: 100%;
+}
+
+.combination .key {
+  background: url(/images/keys.png) no-repeat;
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-position: -32px 0;
+}
+
+.combination .key.z {
+  background-position: 0 0;
+}
+
+.combination .key.x {
+  background-position: -16px 0;
+}
