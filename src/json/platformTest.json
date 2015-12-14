@@ -17,7 +17,7 @@
          "name":"characters",
          "objects":[
                 {
-                 "gid":38,
+                 "gid":56,
                  "height":64,
                  "id":1,
                  "name":"player",
@@ -29,11 +29,11 @@
                  "type":"player",
                  "visible":true,
                  "width":64,
-                 "x":64,
-                 "y":480
+                 "x":480,
+                 "y":448
                 }, 
                 {
-                 "gid":42,
+                 "gid":68,
                  "height":64,
                  "id":9,
                  "name":"goal",
@@ -57,11 +57,11 @@
         }, 
         {
          "draworder":"topdown",
-         "height":20,
+         "height":0,
          "name":"platforms",
          "objects":[
                 {
-                 "gid":49,
+                 "gid":77,
                  "height":32,
                  "id":62,
                  "name":"",
@@ -78,7 +78,7 @@
                  "y":512
                 }, 
                 {
-                 "gid":49,
+                 "gid":77,
                  "height":32,
                  "id":63,
                  "name":"",
@@ -97,7 +97,7 @@
          "opacity":1,
          "type":"objectgroup",
          "visible":true,
-         "width":40,
+         "width":0,
          "x":0,
          "y":0
         }],
@@ -113,7 +113,7 @@
         {
          "firstgid":1,
          "image":"..\/images\/tileset.png",
-         "imageheight":192,
+         "imageheight":288,
          "imagewidth":192,
          "margin":0,
          "name":"tileset",
@@ -122,12 +122,12 @@
 
             },
          "spacing":0,
-         "tilecount":36,
+         "tilecount":54,
          "tileheight":32,
          "tilewidth":32
         }, 
         {
-         "firstgid":37,
+         "firstgid":55,
          "image":"..\/images\/enemy.png",
          "imageheight":32,
          "imagewidth":32,
@@ -143,10 +143,10 @@
          "tilewidth":32
         }, 
         {
-         "firstgid":38,
+         "firstgid":56,
          "image":"..\/images\/player.png",
-         "imageheight":128,
-         "imagewidth":128,
+         "imageheight":192,
+         "imagewidth":256,
          "margin":0,
          "name":"player",
          "properties":
@@ -154,15 +154,15 @@
 
             },
          "spacing":0,
-         "tilecount":4,
+         "tilecount":12,
          "tileheight":64,
          "tilewidth":64
         }, 
         {
-         "firstgid":42,
+         "firstgid":68,
          "image":"..\/images\/goal.png",
-         "imageheight":64,
-         "imagewidth":64,
+         "imageheight":96,
+         "imagewidth":96,
          "margin":0,
          "name":"goal",
          "properties":
@@ -175,10 +175,10 @@
          "tilewidth":64
         }, 
         {
-         "firstgid":43,
+         "firstgid":69,
          "image":"..\/images\/coin.png",
          "imageheight":32,
-         "imagewidth":32,
+         "imagewidth":160,
          "margin":0,
          "name":"coin",
          "properties":
@@ -186,15 +186,15 @@
 
             },
          "spacing":0,
-         "tilecount":1,
+         "tilecount":5,
          "tileheight":32,
          "tilewidth":32
         }, 
         {
-         "firstgid":44,
+         "firstgid":74,
          "image":"..\/images\/spikes.png",
          "imageheight":32,
-         "imagewidth":128,
+         "imagewidth":64,
          "margin":0,
          "name":"spikes",
          "properties":
@@ -202,12 +202,12 @@
 
             },
          "spacing":0,
-         "tilecount":4,
+         "tilecount":2,
          "tileheight":32,
          "tilewidth":32
         }, 
         {
-         "firstgid":48,
+         "firstgid":76,
          "image":"..\/images\/shooter.png",
          "imageheight":32,
          "imagewidth":32,
@@ -223,7 +223,7 @@
          "tilewidth":32
         }, 
         {
-         "firstgid":49,
+         "firstgid":77,
          "image":"..\/images\/mobile_platform.png",
          "imageheight":32,
          "imagewidth":128,

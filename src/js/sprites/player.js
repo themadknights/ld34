@@ -10,6 +10,8 @@ export class Player extends Phaser.Sprite {
     constructor(state, x, y) {
         super(state.game, x, y, 'player');
 
+        this.game.camera.follow(this);
+
         this.spells = {};
         this.spells[MoveSpell.combination()] = new MoveSpell(MoveSpell.combination(), this);
         this.spells[JumpSpell.combination()] = new JumpSpell(JumpSpell.combination(), this);
@@ -25,8 +27,6 @@ export class Player extends Phaser.Sprite {
         this.game.physics.arcade.enable(this);
         this.body.width = this.width / 2;
         this.body.offset.x -= 5;
-        this.body.immovable = true;
-        this.game.camera.follow(this);
 
         this.animations.add("idle", [0, 1], 2, true);
         this.animations.add("walk", [8,9,10,11], 4, true);
