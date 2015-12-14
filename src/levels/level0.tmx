@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="80" height="20" tilewidth="32" tileheight="32" nextobjectid="157">
  <properties>
-  <property name="music" value="music1"/>
+  <property name="music" value="music0"/>
  </properties>
  <tileset firstgid="1" name="tileset" tilewidth="32" tileheight="32" tilecount="54">
   <image source="../images/tileset.png" width="192" height="288"/>
@@ -3237,7 +3237,11 @@
  </layer>
  <objectgroup name="characters">
   <object id="1" name="player" type="player" gid="56" x="32" y="288" width="64" height="64"/>
-  <object id="9" name="goal" type="goal" gid="72" x="2464" y="448" width="64" height="64"/>
+  <object id="9" name="goal" type="goal" gid="72" x="2464" y="448" width="64" height="64">
+   <properties>
+    <property name="nextLevel" value="level1"/>
+   </properties>
+  </object>
   <object id="136" type="enemy" gid="55" x="2080" y="448" width="32" height="32"/>
   <object id="137" type="enemy" gid="55" x="2400" y="448" width="32" height="32"/>
  </objectgroup>

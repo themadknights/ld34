@@ -50,7 +50,7 @@
                  "name":"goal",
                  "properties":
                     {
-
+                     "nextLevel":"level1"
                     },
                  "rotation":0,
                  "type":"goal",
@@ -1063,7 +1063,7 @@
  "orientation":"orthogonal",
  "properties":
     {
-     "music":"music1"
+     "music":"music0"
     },
  "renderorder":"right-down",
  "tileheight":32,

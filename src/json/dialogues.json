@@ -11,24 +11,51 @@
           { "avatar": "memory", "text": "Come on, let's go! Use the Z button\n\nto cast a 'Move' spell", "position": "right"}
       ],
       "jump": [
-          { "avatar": "memory", "text": "placeholder", "position": "right" },
-          { "avatar": "mage", "text": "placeholder", "position": "left" }
+          { "avatar": "memory", "text": "How do you feel?", "position": "right" },
+          { "avatar": "mage", "text": "Fine I guess...", "position": "left" },
+          { "avatar": "memory", "text": "So you can reach those coins\n\nwithout my help...", "position": "right" },
+          { "avatar": "mage", "text": "What do you mean?", "position": "left" },
+          { "avatar": "memory", "text": "Do you feel like you want to\n\nlearn something new?", "position": "right" },
+          { "avatar": "mage", "text": "Is this a kind of riddle?", "position": "left" },
+          { "avatar": "memory", "text": "...", "position": "right" },
+          { "avatar": "memory", "text": "Nevermind. Use the X button to\n\ncast a jump spell.", "position": "right" }
       ],
       "move-jump": [
-          { "avatar": "mage", "text": "placeholder", "position": "left" }
+          { "avatar": "memory", "text": "Careful!", "position": "right" },
+          { "avatar": "mage", "text": "Now what?", "position": "left" },
+          { "avatar": "memory", "text": "The wall dude...", "position": "right" },
+          { "avatar": "mage", "text": "Oh right! Teach me the\n\n'destroy wall' spell, hurry!", "position": "left" },
+          { "avatar": "memory", "text": "You never knew that spell!", "position": "right" },
+          { "avatar": "mage", "text": "Damn! Well... game over then.", "position": "left" },
+          { "avatar": "memory", "text": "You know how to jump...", "position": "right" },
+          { "avatar": "mage", "text": "Yeah but I need to move as well", "position": "left" },
+          { "avatar": "memory", "text": "You can cast a 'move' spell in\n\nmid air", "position": "right" },
+          { "avatar": "mage", "text": "Sounds very difficult, I pass!", "position": "left" },
+          { "avatar": "memory", "text": "...", "position": "right" },
+          { "avatar": "mage", "text": "Joking! Let's go nemo", "position": "left" },
+          { "avatar": "memory", "text": "I suppose that's not a typo...", "position": "right" }
       ],
       "move-jump-2": {
           "move-jump": [
-              { "avatar": "memory", "text": "You picked it", "position": "right" },
-              { "avatar": "mage", "text": "placeholder", "position": "left" }
+              { "avatar": "memory", "text": "You did it!", "position": "right" },
+              { "avatar": "mage", "text": "Yeah...but I prefer the\n\n'destroy wall' spell method...", "position": "left" }
           ],
           "!move-jump": [
-              { "avatar": "memory", "text": "You didnt picked it", "position": "right" },
-              { "avatar": "mage", "text": "placeholder", "position": "left" }
+              { "avatar": "memory", "text": "You learn very fast...", "position": "right" },
+              { "avatar": "mage", "text": "What do you mean? I can cast\n\nas many spells as I want...", "position": "left" },
+              { "avatar": "memory", "text": "You are lucky, the developers\n\nhave not included mana mechanics", "position": "right" },
+              { "avatar": "mage", "text": "Neither cooldowns...", "position": "left" }
           ]
       },
       "slimes": [
-          { "avatar": "mage", "text": "placeholder", "position": "left" }
+          { "avatar": "mage", "text": "Oh no! Slimes and spikes!!\n\nWe are dead!", "position": "left" },
+          { "avatar": "memory", "text": "I'm not even alive!", "position": "right" },
+          { "avatar": "mage", "text": "Teach me something!", "position": "left" },
+          { "avatar": "memory", "text": "Ok. That's gonna hurt...", "position": "right" },
+          { "avatar": "mage", "text": "Yikes!", "position": "left" },
+          { "avatar": "memory", "text": "Don't worry dude, you have\n\nthree health points in each level", "position": "right" },
+          { "avatar": "mage", "text": "And the spikes?", "position": "left" },
+          { "avatar": "memory", "text": "Just. Don't. Jump", "position": "right" }
       ]
   },
   "level1": {
