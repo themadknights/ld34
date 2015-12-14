@@ -67,6 +67,12 @@ export class Player extends Phaser.Sprite {
                 alpha: 0
             },  Phaser.Timer.HALF, "Linear", true, 0.5 * Phaser.Timer.HALF);
             this.castBar.play('casting');
+        } else {
+            if (this.body.velocity.x > 0) {
+                this.play('walk');
+            } else {
+                this.play('idle');
+            }
         }
     }
 
