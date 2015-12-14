@@ -24,7 +24,7 @@ export class StartState extends Phaser.State {
         this.showDebug = false;
         // @endif
 
-        this.levelId = 'platformTest';
+        this.levelId = 'goalTest';
     }
 
     create() {
@@ -107,7 +107,7 @@ export class StartState extends Phaser.State {
         });
 
         this.physics.arcade.overlap(this.player, this.goal, () => {
-            this.levelComplete();
+            this.levelComplete(this.goal.nextLevel);
         });
 
         this.physics.arcade.overlap(this.player, this.coins, (player, coin) => {
@@ -189,8 +189,12 @@ export class StartState extends Phaser.State {
         this.game.state.start('start', true, false, this.score);
     }
 
-    levelComplete() {
-        this.game.state.start('start', true, false, this.score);
+    levelComplete(nextLevel) {
+        if(nextLevel) {
+            this.game.state.start('start', true, false, this.score);
+        } else {
+            this.game.state.start('thanks', true, false, this.score);
+        }
     }
 
     updateHealthHud () {
