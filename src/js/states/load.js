@@ -15,10 +15,10 @@ export class LoadState extends Phaser.State {
         this.load.spritesheet('keys', 'images/keys.png', 16, 16, 2);
         this.load.spritesheet('coin', 'images/coin.png', 32, 32, 5);
         this.load.spritesheet('memory', 'images/memory.png', 32, 32, 5);
+        this.load.spritesheet('shooter', 'images/shooter.png', 32, 32, 4);
         this.load.image('logo', 'images/logo.png');
         this.load.image('tmkLogo', 'images/TMKSquareG.png');
         this.load.image('shield', 'images/shield.png');
-        this.load.image('shooter', 'images/shooter.png');
         this.load.image('projectile', 'images/projectile.png');
         this.load.image('mobilePlatform', 'images/mobile_platform.png');
         this.load.image('goal', 'images/goal.png');
