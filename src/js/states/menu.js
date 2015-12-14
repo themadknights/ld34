@@ -7,6 +7,9 @@ export class MenuState extends Phaser.State {
         this.logo = this.game.add.image(400, 240, 'logo');
         this.logo.fixedToCamera = true;
         this.logo.anchor.setTo(0.5);
+        this.serial = this.game.add.bitmapText(400, 410, 'carrier_command', 'Serial number: ZXXZXZXZ', 7);
+        this.serial.fixedToCamera = true;
+        this.serial.anchor.setTo(0.5);
 
         //Add 'Tha mage'
         this.mage = this.game.add.sprite(200, 470, 'player');
