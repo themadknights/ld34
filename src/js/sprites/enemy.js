@@ -6,8 +6,13 @@ export class Enemy extends Phaser.Sprite {
         this.game.add.existing(this);
         this.game.physics.arcade.enable(this);
 
-        this.body.velocity.x = 50;
         this.scale.setTo(-1, 1);
+
+        this.body.velocity.x = 50;
+        this.body.position.y += 10;
+        this.body.offset.y = 5;
+        this.body.height -= 10;
+        // this.body.height -= 20;
 
         this.animations.add("patrol", [0,1,2,1], 8, true);
         this.play("patrol");

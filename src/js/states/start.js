@@ -12,9 +12,16 @@ export class StartState extends Phaser.State {
         //Starting Physics
         this.physics.startSystem(Phaser.Physics.ARCADE);
 
+        // @if NODE_ENV = 'development'
         //  Press F1 to toggle the debug display
         this.debugKey = this.input.keyboard.addKey(Phaser.Keyboard.F1);
         this.debugKey.onDown.add(this.toggleDebug, this);
+        // @endif
+
+        this.showDebug = true;
+        // @if NODE_ENV = 'production'
+        this.showDebug = false;
+        // @endif
     }
 
     create() {
@@ -123,10 +130,13 @@ export class StartState extends Phaser.State {
             this.game.debug.body(this.goal);
             this.enemies.forEach((enemy) => this.game.debug.body(enemy));
             this.spikes.forEach((spike) => this.game.debug.body(spike));
+            this.fireballs.forEach((fireball) => this.game.debug.body(fireball));
             this.shooters.forEach((shooter) => this.game.debug.body(shooter));
             this.projectiles.forEach((projectile) => this.game.debug.body(projectile));
-            this.game.debug.body(this.player.spells['XZ'].shield);
-            this.game.debug.text(this.player.body.velocity, 10, 60);
+            this.coins.forEach((coin) => this.game.debug.body(coin));
+            if (this.player.spells['XZ'].shield.alive) {
+                this.game.debug.body(this.player.spells['XZ'].shield);
+            }
         }
     }
 

@@ -24,6 +24,8 @@ export class Player extends Phaser.Sprite {
         this.anchor.setTo(0.5);
         this.game.add.existing(this);
         this.game.physics.arcade.enable(this);
+        this.body.width = this.width / 2;
+        this.body.offset.x -= 5;
         this.game.camera.follow(this);
 
         this.animations.add("idle", [0, 1], 2, true);
