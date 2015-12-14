@@ -9,7 +9,7 @@ export class StartState extends Phaser.State {
         super();
     }
 
-    init() {
+    init(levelId, score) {
         //Starting Physics
         this.physics.startSystem(Phaser.Physics.ARCADE);
 
@@ -19,12 +19,14 @@ export class StartState extends Phaser.State {
         this.debugKey.onDown.add(this.toggleDebug, this);
         // @endif
 
-        this.showDebug = true;
+        this.showDebug = false;
+
         // @if NODE_ENV = 'production'
         this.showDebug = false;
         // @endif
 
-        this.levelId = 'level0';
+        this.levelId = levelId || 'goalTest';
+        this.score = score || 0;
     }
 
     create() {
@@ -107,7 +109,7 @@ export class StartState extends Phaser.State {
         });
 
         this.physics.arcade.overlap(this.player, this.goal, () => {
-            this.levelComplete();
+            this.levelComplete(this.goal.nextLevel);
         });
 
         this.physics.arcade.overlap(this.player, this.coins, (player, coin) => {
@@ -116,14 +118,14 @@ export class StartState extends Phaser.State {
 
         this.physics.arcade.overlap(this.player, this.memories, (player, memory) => {
             if (memory.dialogueId) {
-                this.dialogue.start(memory.dialogueId);
+                this.dialogue.start(memory.dialogueId, memory.condition);
             }
             memory.kill();
         });
 
         this.physics.arcade.overlap(this.player, this.spikes, (player, spike) => {
             if (player.body.velocity.y > 0 && player.body.bottom !== spike.body.bottom) {
-                this.gameOver();
+                this.restart();
             }
         });
 
@@ -161,7 +163,6 @@ export class StartState extends Phaser.State {
         this.hudBottomBackground.fixedToCamera = true;
         this.hudBottomBackground.alpha = 0.7;
 
-        this.score = 0;
         this.scoreLabel = this.game.add.bitmapText(this.game.width - 10, 10, 'carrier_command', `Score: ${pad(this.score)}`, 12);
         this.scoreLabel.anchor.setTo(1, 0);
         this.scoreLabel.fixedToCamera = true;
@@ -182,15 +183,42 @@ export class StartState extends Phaser.State {
 
         this.updateHealthHud();
 
+        this.levelCompleteOverlay = this.game.add.image(0, 0, 'levelCompleteOverlay');
+        this.levelCompleteOverlay.alpha = 0;
+        this.levelCompleteOverlay.fixedToCamera = true;
+        this.levelCompleteText = this.game.add.bitmapText(400, 300, 'carrier_command', "Level complete!", 16);
+        this.levelCompleteText.anchor.setTo(0.5);
+        this.levelCompleteText.fixedToCamera = true;
+        this.levelCompleteText.visible = false;
+
         this.dialogue = new Dialogue(this);
     }
 
-    gameOver() {
-        this.game.state.start('start', true, false, this.score);
+    restart() {
+        this.game.state.start('start', true, false, this.levelId, this.score);
     }
 
-    levelComplete() {
-        this.game.state.start('start', true, false, this.score);
+    levelComplete(nextLevel) {
+        if (!this.levelCompleted) {
+            this.levelCompleted = true;
+            this.player.stop();
+            this.levelCompleteTween = this.game.add.tween(this.levelCompleteOverlay).to({
+                alpha: 0.7
+            },  Phaser.Timer.HALF, "Linear", true);
+            this.levelCompleteTween.onComplete.add(() => {
+                this.levelCompleteText.visible = true;
+                let timer = this.game.time.create(this.game, true);
+                timer.add(Phaser.Timer.SECOND, function() {
+                    if(nextLevel) {
+                        this.game.state.start('start', true, false, nextLevel, this.score);
+                    } else {
+                        this.game.state.start('thanks', true, false, this.score);
+                    }
+                }, this);
+                timer.start();
+            });
+            this.levelCompleteTween.start();
+        }
     }
 
     updateHealthHud () {

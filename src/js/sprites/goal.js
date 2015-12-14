@@ -13,4 +13,10 @@ export class Goal extends Phaser.Sprite {
 
         this.body.allowGravity = false;
     }
+
+    setData(data) {
+        if (data.properties) {
+            this.nextLevel = data.properties.nextLevel;
+        }
+    }
 }

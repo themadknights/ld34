@@ -4,7 +4,7 @@ export class MenuState extends Phaser.State {
     }
 
     create() {
-        this.logo = this.game.add.image(this.game.world.centerX, this.game.world.centerY - 60, 'logo');
+        this.logo = this.game.add.image(400, 240, 'logo');
         this.logo.fixedToCamera = true;
         this.logo.anchor.setTo(0.5);
 

@@ -1,13 +1,13 @@
-export class CreditsState extends Phaser.State {
+export class ThanksState extends Phaser.State {
     constructor() {
         super();
     }
 
-    create() {
-        this.publisherLogo = this.game.add.image(400, 150, 'tmkLogo');
-        this.publisherLogo.fixedToCamera = true;
-        this.publisherLogo.anchor.setTo(0.5);
+    init(score) {
+        this.score = score || 0;
+    }
 
+    create() {
         //Add 'Tha mage'
         this.mage = this.game.add.sprite(200, 470, 'player');
         this.mage.animations.add('cast', [0, 1], 10, true);
@@ -28,10 +28,10 @@ export class CreditsState extends Phaser.State {
             this.castBar.play('casting');
         }, this);
 
-        // Add tmk members
-        this.game.add.bitmapText(320, 280, 'carrier_command', '@ReikVal', 16);
-        this.game.add.bitmapText(320, 320, 'carrier_command', '@lastpotion', 16);
-        this.game.add.bitmapText(320, 360, 'carrier_command', '@beagleknight', 16);
+        this.game.add.bitmapText(210, 180, 'carrier_command', 'THANKS FOR PLAYING!', 18);
+
+        this.scoreText = this.game.add.bitmapText(400, 290, 'carrier_command', `Score: ${this.score}`, 16);
+        this.scoreText.anchor.setTo(0.5);
 
         //Create menu
         this.game.add.bitmapText(300, 460, 'carrier_command', 'List of Spells: ', 16);
