@@ -105,7 +105,7 @@
       ],
       "finish": [
           { "avatar": "memory", "text": "- missing locale string 'finish' -", "position": "right" },
-          { "avatar": "mage", "text": "...", "position": "right" },
+          { "avatar": "mage", "text": "...", "position": "left" },
           { "avatar": "memory", "text": "Ok ok! I'm just tired...\n\nCome on dude, just finish the game!", "position": "right" }
       ]
   }
