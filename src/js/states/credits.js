@@ -10,7 +10,7 @@ export class CreditsState extends Phaser.State {
 
         //Add 'Tha mage'
         this.mage = this.game.add.sprite(200, 470, 'player');
-        this.mage.animations.add('cast', [0, 1], 10, true);
+        this.mage.animations.add('cast', [4,5,6,7], 10, true);
 
         this.castBar = this.mage.addChild(this.game.make.sprite(0, -20, 'castbar'));
         this.castBar.scale.setTo(12, 4);
