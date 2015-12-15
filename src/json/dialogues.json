@@ -91,7 +91,7 @@
           { "avatar": "mage", "text": "Yeah yeah...but I have amnesia\n\nremember? I'm a bit dizzy...", "position": "left" },
           { "avatar": "memory", "text": "I know but you are kinda deaf", "position": "right" },
           { "avatar": "mage", "text": "Wha...", "position": "left" },
-          { "avatar": "memory", "text": "The 'fireball' spell! Use the combo\n\nXZZ and...Y?", "position": "right" },
+          { "avatar": "memory", "text": "The 'fireball' spell! Use the combo\n\nZXX and...Y?", "position": "right" },
           { "avatar": "mage", "text": "Don't ask me, dude! I thought Y was\n\nbanned by the magician academy", "position": "left" },
           { "avatar": "memory", "text": "Maybe... but I'm sure a letter\n\nis missing...", "position": "right" }
       ],
