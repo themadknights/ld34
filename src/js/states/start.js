@@ -30,6 +30,7 @@ export class StartState extends Phaser.State {
         this.initialScore = score;
 
         this.levelCompleted = false;
+        this.checkPointPosition = null;
     }
 
     create() {
