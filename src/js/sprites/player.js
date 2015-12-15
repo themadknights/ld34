@@ -50,8 +50,8 @@ export class Player extends Phaser.Sprite {
         let animation = this.castBar.animations.add('casting', [0, 1, 2, 3, 4, 5, 0], 75, false);
         animation.onComplete.add(function() {
             this.castBar.visible = false;
-            this.currentSpell.cast();
             this.play('idle');
+            this.currentSpell.cast();
         }, this);
 
         //Spell
