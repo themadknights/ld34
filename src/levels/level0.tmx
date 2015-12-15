@@ -21,10 +21,10 @@
  <tileset firstgid="78" name="spikes" tilewidth="32" tileheight="32" tilecount="2">
   <image source="../images/spikes.png" width="64" height="32"/>
  </tileset>
- <tileset firstgid="80" name="shooter" tilewidth="32" tileheight="32" tilecount="4">
-  <image source="../images/shooter.png" width="128" height="32"/>
+ <tileset firstgid="80" name="shooter" tilewidth="32" tileheight="32" tilecount="1">
+  <image source="../images/shooter.png" width="32" height="32"/>
  </tileset>
- <tileset firstgid="84" name="memory" tilewidth="32" tileheight="32" tilecount="4">
+ <tileset firstgid="81" name="memory" tilewidth="32" tileheight="32" tilecount="5">
   <image source="../images/memory.png" width="128" height="32"/>
  </tileset>
  <layer name="foreground" width="80" height="20">
@@ -3303,28 +3303,28 @@
  </objectgroup>
  <objectgroup name="shooters"/>
  <objectgroup name="memories">
-  <object id="152" gid="84" x="32" y="480" width="32" height="32">
+  <object id="152" gid="81" x="32" y="480" width="32" height="32">
    <properties>
     <property name="dialogue" value="move"/>
    </properties>
   </object>
-  <object id="153" gid="84" x="576" y="480" width="32" height="32">
+  <object id="153" gid="81" x="576" y="480" width="32" height="32">
    <properties>
     <property name="dialogue" value="jump"/>
    </properties>
   </object>
-  <object id="154" gid="84" x="1152" y="448" width="32" height="32" visible="0">
+  <object id="154" gid="81" x="1152" y="448" width="32" height="32" visible="0">
    <properties>
     <property name="dialogue" value="move-jump"/>
    </properties>
   </object>
-  <object id="155" gid="84" x="1248" y="384" width="32" height="32">
+  <object id="155" gid="81" x="1248" y="384" width="32" height="32">
    <properties>
     <property name="condition" value="move-jump"/>
     <property name="dialogue" value="move-jump-2"/>
    </properties>
   </object>
-  <object id="156" gid="84" x="1920" y="448" width="32" height="32">
+  <object id="156" gid="81" x="1920" y="448" width="32" height="32">
    <properties>
     <property name="dialogue" value="slimes"/>
    </properties>

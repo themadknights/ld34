@@ -39,7 +39,7 @@
                  "name":"goal",
                  "properties":
                     {
-
+                     "nextLevel":"level2"
                     },
                  "rotation":0,
                  "type":"goal",

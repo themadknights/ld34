@@ -972,7 +972,7 @@
          "name":"memories",
          "objects":[
                 {
-                 "gid":84,
+                 "gid":81,
                  "height":32,
                  "id":152,
                  "name":"",
@@ -988,7 +988,7 @@
                  "y":480
                 }, 
                 {
-                 "gid":84,
+                 "gid":81,
                  "height":32,
                  "id":153,
                  "name":"",
@@ -1004,7 +1004,7 @@
                  "y":480
                 }, 
                 {
-                 "gid":84,
+                 "gid":81,
                  "height":32,
                  "id":154,
                  "name":"",
@@ -1020,7 +1020,7 @@
                  "y":448
                 }, 
                 {
-                 "gid":84,
+                 "gid":81,
                  "height":32,
                  "id":155,
                  "name":"",
@@ -1037,7 +1037,7 @@
                  "y":384
                 }, 
                 {
-                 "gid":84,
+                 "gid":81,
                  "height":32,
                  "id":156,
                  "name":"",
@@ -1168,7 +1168,7 @@
          "firstgid":80,
          "image":"..\/images\/shooter.png",
          "imageheight":32,
-         "imagewidth":128,
+         "imagewidth":32,
          "margin":0,
          "name":"shooter",
          "properties":
@@ -1176,12 +1176,12 @@
 
             },
          "spacing":0,
-         "tilecount":4,
+         "tilecount":1,
          "tileheight":32,
          "tilewidth":32
         }, 
         {
-         "firstgid":84,
+         "firstgid":81,
          "image":"..\/images\/memory.png",
          "imageheight":32,
          "imagewidth":128,
@@ -1192,7 +1192,7 @@
 
             },
          "spacing":0,
-         "tilecount":4,
+         "tilecount":5,
          "tileheight":32,
          "tilewidth":32
         }],
