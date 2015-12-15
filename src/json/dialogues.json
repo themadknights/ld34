@@ -81,7 +81,6 @@
           { "avatar": "memory", "text": "Just listen to me dude!\n\nIn a few seconds you will need this!", "position": "right" },
           { "avatar": "mage", "text": "Okay...", "position": "left" },
           { "avatar": "memory", "text": "Try to cast the 'shield' spell\n\nusing XZ if you are in danger...", "position": "right" }
-
       ]
   },
   "level2": {
