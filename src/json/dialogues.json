@@ -85,13 +85,28 @@
   },
   "level2": {
       "fire": [
-          { "avatar": "mage", "text": "placeholder" }
+          { "avatar": "memory", "text": "FIREBALLS!!!!", "position": "right" },
+          { "avatar": "mage", "text": "Aaargh, you scared me!", "position": "left" },
+          { "avatar": "memory", "text": "Are you ready for\n\n\"the\" spell?", "position": "right" },
+          { "avatar": "mage", "text": "Yeah yeah...but I have amnesia\n\nremember? I'm a bit dizzy...", "position": "left" },
+          { "avatar": "memory", "text": "I know but you are kinda deaf", "position": "right" },
+          { "avatar": "mage", "text": "Wha...", "position": "left" },
+          { "avatar": "memory", "text": "The 'fireball' spell! Use the combo\n\nXZZ and...Y?", "position": "right" },
+          { "avatar": "mage", "text": "Don't ask me, dude! I thought Y was\n\nbanned by the magician academy", "position": "left" },
+          { "avatar": "memory", "text": "Maybe... but I'm sure a letter\n\nis missing...", "position": "right" }
       ],
       "levitate": [
-          { "avatar": "mage", "text": "placeholder" }
+          { "avatar": "memory", "text": "You are tired of walking and\n\njumping, don't you?", "position": "right" },
+          { "avatar": "mage", "text": "Nah, I'm o...", "position": "left" },
+          { "avatar": "memory", "text": "You need the 'levitation' spell!", "position": "right" },
+          { "avatar": "mage", "text": "No! I'm fine!", "position": "left" },
+          { "avatar": "memory", "text": "But I don't remember the\n\ncombo so nevermind.", "position": "right" },
+          { "avatar": "mage", "text": "...", "position": "left" }
       ],
       "finish": [
-          { "avatar": "mage", "text": "placeholder" }
+          { "avatar": "memory", "text": "- missing locale string 'finish' -", "position": "right" },
+          { "avatar": "mage", "text": "...", "position": "right" },
+          { "avatar": "memory", "text": "Ok ok! I'm just tired...\n\nCome on dude, just finish the game!", "position": "right" }
       ]
   }
 

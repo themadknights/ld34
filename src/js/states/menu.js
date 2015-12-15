@@ -34,7 +34,6 @@ export class MenuState extends Phaser.State {
             this.mage.play('cast');
             this.castBar.play('casting');
             this.castingBarAnimation.onComplete.add(function() {
-                //TODO: Credits State
                 this.game.state.start('credits');
             }, this);
         }, this);

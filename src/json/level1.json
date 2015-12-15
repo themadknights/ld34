@@ -33,7 +33,7 @@
                  "y":416
                 }, 
                 {
-                 "gid":68,
+                 "gid":72,
                  "height":64,
                  "id":9,
                  "name":"goal",
@@ -93,7 +93,7 @@
          "name":"platforms",
          "objects":[
                 {
-                 "gid":77,
+                 "gid":81,
                  "height":32,
                  "id":62,
                  "name":"",
@@ -110,7 +110,7 @@
                  "y":512
                 }, 
                 {
-                 "gid":77,
+                 "gid":81,
                  "height":32,
                  "id":63,
                  "name":"",
@@ -127,7 +127,7 @@
                  "y":512
                 }, 
                 {
-                 "gid":77,
+                 "gid":81,
                  "height":32,
                  "id":68,
                  "name":"",
@@ -144,7 +144,7 @@
                  "y":448
                 }, 
                 {
-                 "gid":77,
+                 "gid":81,
                  "height":32,
                  "id":101,
                  "name":"",
@@ -161,7 +161,7 @@
                  "y":448
                 }, 
                 {
-                 "gid":77,
+                 "gid":81,
                  "height":32,
                  "id":102,
                  "name":"",
@@ -190,7 +190,7 @@
          "name":"spikes",
          "objects":[
                 {
-                 "gid":74,
+                 "gid":78,
                  "height":32,
                  "id":70,
                  "name":"",
@@ -206,7 +206,7 @@
                  "y":480
                 }, 
                 {
-                 "gid":74,
+                 "gid":78,
                  "height":32,
                  "id":71,
                  "name":"",
@@ -222,7 +222,7 @@
                  "y":480
                 }, 
                 {
-                 "gid":74,
+                 "gid":78,
                  "height":32,
                  "id":72,
                  "name":"",
@@ -250,7 +250,7 @@
          "name":"coins",
          "objects":[
                 {
-                 "gid":69,
+                 "gid":73,
                  "height":32,
                  "id":73,
                  "name":"",
@@ -266,7 +266,7 @@
                  "y":416
                 }, 
                 {
-                 "gid":69,
+                 "gid":73,
                  "height":32,
                  "id":74,
                  "name":"",
@@ -282,7 +282,7 @@
                  "y":384
                 }, 
                 {
-                 "gid":69,
+                 "gid":73,
                  "height":32,
                  "id":75,
                  "name":"",
@@ -298,7 +298,7 @@
                  "y":416
                 }, 
                 {
-                 "gid":69,
+                 "gid":73,
                  "height":32,
                  "id":76,
                  "name":"",
@@ -314,7 +314,7 @@
                  "y":384
                 }, 
                 {
-                 "gid":69,
+                 "gid":73,
                  "height":32,
                  "id":77,
                  "name":"",
@@ -330,7 +330,7 @@
                  "y":416
                 }, 
                 {
-                 "gid":69,
+                 "gid":73,
                  "height":32,
                  "id":78,
                  "name":"",
@@ -346,7 +346,7 @@
                  "y":416
                 }, 
                 {
-                 "gid":69,
+                 "gid":73,
                  "height":32,
                  "id":79,
                  "name":"",
@@ -362,7 +362,7 @@
                  "y":384
                 }, 
                 {
-                 "gid":69,
+                 "gid":73,
                  "height":32,
                  "id":80,
                  "name":"",
@@ -378,7 +378,7 @@
                  "y":416
                 }, 
                 {
-                 "gid":69,
+                 "gid":73,
                  "height":32,
                  "id":81,
                  "name":"",
@@ -394,7 +394,7 @@
                  "y":384
                 }, 
                 {
-                 "gid":69,
+                 "gid":73,
                  "height":32,
                  "id":82,
                  "name":"",
@@ -410,7 +410,7 @@
                  "y":416
                 }, 
                 {
-                 "gid":69,
+                 "gid":73,
                  "height":32,
                  "id":84,
                  "name":"",
@@ -426,7 +426,7 @@
                  "y":352
                 }, 
                 {
-                 "gid":69,
+                 "gid":73,
                  "height":32,
                  "id":85,
                  "name":"",
@@ -442,7 +442,7 @@
                  "y":320
                 }, 
                 {
-                 "gid":69,
+                 "gid":73,
                  "height":32,
                  "id":86,
                  "name":"",
@@ -458,7 +458,7 @@
                  "y":288
                 }, 
                 {
-                 "gid":69,
+                 "gid":73,
                  "height":32,
                  "id":93,
                  "name":"",
@@ -474,7 +474,7 @@
                  "y":384
                 }, 
                 {
-                 "gid":69,
+                 "gid":73,
                  "height":32,
                  "id":94,
                  "name":"",
@@ -502,7 +502,7 @@
          "name":"memories",
          "objects":[
                 {
-                 "gid":78,
+                 "gid":82,
                  "height":32,
                  "id":89,
                  "name":"",
@@ -518,7 +518,7 @@
                  "y":416
                 }, 
                 {
-                 "gid":78,
+                 "gid":82,
                  "height":32,
                  "id":109,
                  "name":"",
@@ -557,7 +557,7 @@
          "name":"shooters",
          "objects":[
                 {
-                 "gid":2147483724,
+                 "gid":2147483728,
                  "height":32,
                  "id":110,
                  "name":"",
@@ -574,7 +574,7 @@
                  "y":416
                 }, 
                 {
-                 "gid":2147483724,
+                 "gid":2147483728,
                  "height":32,
                  "id":111,
                  "name":"",
@@ -601,7 +601,7 @@
  "orientation":"orthogonal",
  "properties":
     {
-
+     "music":"music1"
     },
  "renderorder":"right-down",
  "tileheight":32,
@@ -641,7 +641,7 @@
         {
          "firstgid":56,
          "image":"..\/images\/player.png",
-         "imageheight":192,
+         "imageheight":256,
          "imagewidth":256,
          "margin":0,
          "name":"player",
@@ -650,12 +650,12 @@
 
             },
          "spacing":0,
-         "tilecount":12,
+         "tilecount":16,
          "tileheight":64,
          "tilewidth":64
         }, 
         {
-         "firstgid":68,
+         "firstgid":72,
          "image":"..\/images\/goal.png",
          "imageheight":96,
          "imagewidth":96,
@@ -671,7 +671,7 @@
          "tilewidth":64
         }, 
         {
-         "firstgid":69,
+         "firstgid":73,
          "image":"..\/images\/coin.png",
          "imageheight":32,
          "imagewidth":160,
@@ -687,7 +687,7 @@
          "tilewidth":32
         }, 
         {
-         "firstgid":74,
+         "firstgid":78,
          "image":"..\/images\/spikes.png",
          "imageheight":32,
          "imagewidth":64,
@@ -703,7 +703,7 @@
          "tilewidth":32
         }, 
         {
-         "firstgid":76,
+         "firstgid":80,
          "image":"..\/images\/shooter.png",
          "imageheight":32,
          "imagewidth":32,
@@ -727,7 +727,7 @@
          "tilewidth":32
         }, 
         {
-         "firstgid":77,
+         "firstgid":81,
          "image":"..\/images\/mobile_platform.png",
          "imageheight":32,
          "imagewidth":128,
@@ -743,10 +743,10 @@
          "tilewidth":128
         }, 
         {
-         "firstgid":78,
+         "firstgid":82,
          "image":"..\/images\/memory.png",
          "imageheight":32,
-         "imagewidth":160,
+         "imagewidth":128,
          "margin":0,
          "name":"memory",
          "properties":

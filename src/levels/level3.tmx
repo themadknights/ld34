@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="40" height="20" tilewidth="32" tileheight="32" nextobjectid="101">
+ <properties>
+  <property name="music" value="music3"/>
+ </properties>
  <tileset firstgid="1" name="tileset" tilewidth="32" tileheight="32" tilecount="54">
   <image source="../images/tileset.png" width="192" height="288"/>
  </tileset>
@@ -18,10 +21,10 @@
  <tileset firstgid="78" name="spikes" tilewidth="32" tileheight="32" tilecount="2">
   <image source="../images/spikes.png" width="64" height="32"/>
  </tileset>
- <tileset firstgid="80" name="shooter" tilewidth="32" tileheight="32" tilecount="1">
-  <image source="../images/shooter.png" width="32" height="32"/>
+ <tileset firstgid="80" name="shooter" tilewidth="32" tileheight="32" tilecount="4">
+  <image source="../images/shooter.png" width="128" height="32"/>
  </tileset>
- <tileset firstgid="81" name="mobile_platform" tilewidth="128" tileheight="32" tilecount="1">
+ <tileset firstgid="84" name="mobile_platform" tilewidth="128" tileheight="32" tilecount="1">
   <image source="../images/mobile_platform.png" width="128" height="32"/>
  </tileset>
  <layer name="foreground" width="40" height="20">
@@ -833,19 +836,19 @@
   <object id="9" name="goal" type="goal" gid="72" x="960" y="480" width="64" height="64"/>
  </objectgroup>
  <objectgroup name="platforms">
-  <object id="67" gid="81" x="320" y="512" width="128" height="32">
+  <object id="67" gid="84" x="320" y="512" width="128" height="32">
    <properties>
     <property name="maxDistance" value="7"/>
     <property name="speed" value="400"/>
    </properties>
   </object>
-  <object id="68" gid="81" x="512" y="448" width="128" height="32">
+  <object id="68" gid="84" x="512" y="448" width="128" height="32">
    <properties>
     <property name="maxDistance" value="3"/>
     <property name="speed" value="300"/>
    </properties>
   </object>
-  <object id="71" gid="81" x="640" y="576" width="128" height="32">
+  <object id="71" gid="84" x="640" y="576" width="128" height="32">
    <properties>
     <property name="maxDistance" value="5"/>
     <property name="speed" value="700"/>

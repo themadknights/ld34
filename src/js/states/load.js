@@ -49,12 +49,13 @@ export class LoadState extends Phaser.State {
         this.load.audio('music0', 'sounds/music0.ogg');
         this.load.audio('music1', 'sounds/music1.ogg');
         this.load.audio('music2', 'sounds/music2.ogg');
+        this.load.audio('music3', 'sounds/music3.ogg');
         this.load.json('dialogues', 'json/dialogues.json');
     }
 
     create () {
         let defaultScene = 'start',
-            defaultLevel = 'level0';
+            defaultLevel = 'level2';
 
         // @if NODE_ENV='production'
         defaultScene = 'publisher';

@@ -103,7 +103,7 @@
                  "name":"goal",
                  "properties":
                     {
-
+                     "nextLevel":"level3"
                     },
                  "rotation":0,
                  "type":"goal",
@@ -2024,7 +2024,7 @@
          "name":"memories",
          "objects":[
                 {
-                 "gid":82,
+                 "gid":85,
                  "height":32,
                  "id":128,
                  "name":"",
@@ -2040,7 +2040,7 @@
                  "y":384
                 }, 
                 {
-                 "gid":82,
+                 "gid":85,
                  "height":32,
                  "id":131,
                  "name":"",
@@ -2056,7 +2056,7 @@
                  "y":160
                 }, 
                 {
-                 "gid":82,
+                 "gid":85,
                  "height":32,
                  "id":143,
                  "name":"",
@@ -2072,7 +2072,7 @@
                  "y":384
                 }, 
                 {
-                 "gid":82,
+                 "gid":85,
                  "height":32,
                  "id":146,
                  "name":"",
@@ -2088,7 +2088,7 @@
                  "y":160
                 }, 
                 {
-                 "gid":82,
+                 "gid":85,
                  "height":32,
                  "id":147,
                  "name":"",
@@ -2125,7 +2125,7 @@
  "orientation":"orthogonal",
  "properties":
     {
-
+     "music":"music2"
     },
  "renderorder":"right-down",
  "tileheight":32,
@@ -2246,7 +2246,7 @@
          "firstgid":81,
          "image":"..\/images\/shooter.png",
          "imageheight":32,
-         "imagewidth":32,
+         "imagewidth":128,
          "margin":0,
          "name":"shooter",
          "properties":
@@ -2254,15 +2254,15 @@
 
             },
          "spacing":0,
-         "tilecount":1,
+         "tilecount":4,
          "tileheight":32,
          "tilewidth":32
         }, 
         {
-         "firstgid":82,
+         "firstgid":85,
          "image":"..\/images\/memory.png",
          "imageheight":32,
-         "imagewidth":160,
+         "imagewidth":128,
          "margin":0,
          "name":"memory",
          "properties":
@@ -2270,7 +2270,7 @@
 
             },
          "spacing":0,
-         "tilecount":5,
+         "tilecount":4,
          "tileheight":32,
          "tileproperties":
             {

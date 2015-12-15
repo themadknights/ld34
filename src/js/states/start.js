@@ -133,9 +133,6 @@ export class StartState extends Phaser.State {
 
         this.physics.arcade.overlap(this.player, this.memories, (player, memory) => {
             if (memory.dialogueId) {
-                // @if NODE_ENV = 'development'
-                // memory.dialogueId = 'shield';
-                // @endif
                 this.dialogue.start(memory.dialogueId, memory.condition);
             }
             this.checkPointPosition = new Phaser.Point(memory.position.x, memory.position.y - memory.height / 2 - this.player.height / 2);

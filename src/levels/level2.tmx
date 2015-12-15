@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="140" height="20" tilewidth="32" tileheight="32" nextobjectid="159">
+ <properties>
+  <property name="music" value="music2"/>
+ </properties>
  <tileset firstgid="1" name="tileset" tilewidth="32" tileheight="32" tilecount="54">
   <image source="../images/tileset.png" width="192" height="288"/>
  </tileset>
@@ -21,11 +24,11 @@
  <tileset firstgid="80" name="mobile_platform" tilewidth="128" tileheight="32" tilecount="1">
   <image source="../images/mobile_platform.png" width="128" height="32"/>
  </tileset>
- <tileset firstgid="81" name="shooter" tilewidth="32" tileheight="32" tilecount="1">
-  <image source="../images/shooter.png" width="32" height="32"/>
+ <tileset firstgid="81" name="shooter" tilewidth="32" tileheight="32" tilecount="4">
+  <image source="../images/shooter.png" width="128" height="32"/>
  </tileset>
- <tileset firstgid="82" name="memory" tilewidth="32" tileheight="32" tilecount="5">
-  <image source="../images/memory.png" width="160" height="32"/>
+ <tileset firstgid="85" name="memory" tilewidth="32" tileheight="32" tilecount="4">
+  <image source="../images/memory.png" width="128" height="32"/>
   <tile id="0">
    <properties>
     <property name="dialogue" value="levitate"/>
@@ -2842,7 +2845,11 @@
   <object id="3" type="enemy" gid="55" x="3744" y="480" width="32" height="32"/>
   <object id="5" type="enemy" gid="55" x="3264" y="160" width="32" height="32"/>
   <object id="6" type="enemy" gid="55" x="4224" y="288" width="32" height="32"/>
-  <object id="9" name="goal" type="goal" gid="72" x="4320" y="544" width="64" height="64"/>
+  <object id="9" name="goal" type="goal" gid="72" x="4320" y="544" width="64" height="64">
+   <properties>
+    <property name="nextLevel" value="level3"/>
+   </properties>
+  </object>
   <object id="75" type="enemy" gid="55" x="256" y="384" width="32" height="32"/>
   <object id="76" type="enemy" gid="55" x="480" y="384" width="32" height="32"/>
   <object id="77" type="enemy" gid="55" x="768" y="384" width="32" height="32"/>
@@ -3023,27 +3030,27 @@
   </object>
  </objectgroup>
  <objectgroup name="memories">
-  <object id="128" gid="82" x="64" y="384" width="32" height="32">
+  <object id="128" gid="85" x="64" y="384" width="32" height="32">
    <properties>
     <property name="dialogue" value="fire"/>
    </properties>
   </object>
-  <object id="131" gid="82" x="1888" y="160" width="32" height="32">
+  <object id="131" gid="85" x="1888" y="160" width="32" height="32">
    <properties>
     <property name="dialogue" value="levitate"/>
    </properties>
   </object>
-  <object id="143" gid="82" x="1888" y="384" width="32" height="32">
+  <object id="143" gid="85" x="1888" y="384" width="32" height="32">
    <properties>
     <property name="dialogue" value="levitate"/>
    </properties>
   </object>
-  <object id="146" gid="82" x="3168" y="160" width="32" height="32">
+  <object id="146" gid="85" x="3168" y="160" width="32" height="32">
    <properties>
     <property name="dialogue" value="finish"/>
    </properties>
   </object>
-  <object id="147" gid="82" x="3168" y="480" width="32" height="32">
+  <object id="147" gid="85" x="3168" y="480" width="32" height="32">
    <properties>
     <property name="dialogue" value="finish"/>
    </properties>
