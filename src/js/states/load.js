@@ -53,7 +53,7 @@ export class LoadState extends Phaser.State {
 
     create () {
         let defaultScene = 'start',
-            defaultLevel = 'level0';
+            defaultLevel = 'level1';
 
         // @if NODE_ENV='production'
         defaultScene = 'publisher';

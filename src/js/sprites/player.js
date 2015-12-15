@@ -49,6 +49,7 @@ export class Player extends Phaser.Sprite {
         this.spellName.alpha = 0;
         let animation = this.castBar.animations.add('casting', [0, 1, 2, 3, 4, 5, 0], 75, false);
         animation.onComplete.add(function() {
+            this.castBar.visible = false;
             this.currentSpell.cast();
             this.play('idle');
         }, this);
@@ -59,6 +60,10 @@ export class Player extends Phaser.Sprite {
     }
 
     cast() {
+        if (this.currentSpell && this.currentSpell.cancelable) {
+            this.currentSpell.cancel();
+        }
+
         if (this.spells[this.spell]) {
             this.currentSpell = this.spells[this.spell];
             this.spellName.text = `${this.currentSpell.name}!`;
@@ -66,6 +71,7 @@ export class Player extends Phaser.Sprite {
             this.game.add.tween(this.spellName).to({
                 alpha: 0
             },  Phaser.Timer.HALF, "Linear", true, 0.5 * Phaser.Timer.HALF);
+            this.castBar.visible = true;
             this.castBar.play('casting');
         } else {
             if (this.body.velocity.x > 0) {
@@ -126,6 +132,10 @@ export class Player extends Phaser.Sprite {
         this.gameState.score += coin.value;
         this.gameState.updateScoreHud();
         coin.kill();
+    }
+
+    kill() {
+        this.gameState.restart();
     }
 
     respawn(position) {

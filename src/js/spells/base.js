@@ -1,5 +1,6 @@
 export class Spell {
     constructor(combination, name, user, fx = null) {
+        this.cancelable = true;
         this.combination = combination;
         this.name = name;
         this.user = user;
