@@ -60,10 +60,28 @@
   },
   "level1": {
       "stop": [
-          { "avatar": "mage", "text": "placeholder" }
+          { "avatar": "memory", "text": "I want to teach you new cool\n\nspells!", "position": "right" },
+          { "avatar": "mage", "text": "Oh really? How about a\n\n'beat the game' spell", "position": "left" },
+          { "avatar": "memory", "text": "That's impossible...", "position": "right" },
+          { "avatar": "mage", "text": "Ok, another boring spell then", "position": "left" },
+          { "avatar": "memory", "text": "Well... you need to use a combo!", "position": "right" },
+          { "avatar": "mage", "text": "Woo like punch, punch, kick!", "position": "left" },
+          { "avatar": "memory", "text": "Nope. Just press ZX to cast a\n\n'stop' spell.", "position": "right" },
+          { "avatar": "mage", "text": "...", "position": "left" },
+          { "avatar": "memory", "text": "Funny, right? Take a look\n\nat the bottom of the screen...", "position": "right" },
+          { "avatar": "mage", "text": "What? Like now?", "position": "left" },
+          { "avatar": "memory", "text": "Not now... when you\n\nare casting a spell!", "position": "right" },
+          { "avatar": "mage", "text": "Roger that!", "position": "left" }
       ],
       "shield": [
-          { "avatar": "mage", "text": "placeholder" }
+          { "avatar": "memory", "text": "Now... the moment of the truth...", "position": "right" },
+          { "avatar": "mage", "text": "Dude I'm kinda busy right now...", "position": "left" },
+          { "avatar": "memory", "text": "Hey listen!", "position": "right" },
+          { "avatar": "mage", "text": "That sounds familiar...", "position": "left" },
+          { "avatar": "memory", "text": "Just listen to me dude!\n\nIn a few seconds you will need this!", "position": "right" },
+          { "avatar": "mage", "text": "Okay...", "position": "left" },
+          { "avatar": "memory", "text": "Try to cast the 'shield' spell\n\nusing XZ if you are in danger...", "position": "right" }
+
       ]
   },
   "level2": {
